@@ -1,1 +1,1 @@
-web: gunicorn wsgi:mc_print
+web: gunicorn wsgi:app
