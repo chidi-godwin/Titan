@@ -29,3 +29,7 @@ def welcome():
 @app.route('/print')
 def print():
     return render_template('print.html')
+
+@app.route('/records')
+def records():
+    return render_template('table.html')
