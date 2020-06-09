@@ -1,15 +1,18 @@
 from app import app
-from app.forms import SignupForm
+from app.forms import SignupForm, LoginForm
 from flask import render_template, request
 
 app.config['SECRET_KEY']='KNOWYOURWORTH'
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    data = request.form
-    print(data)
-    return render_template('signup.html')
+    return "hello World"
 
-@app.route('/index', methods=['GET', 'POSTS'])
-def index2():
+@app.route('/signup', methods=['GET', 'POSTS'])
+def signup():
     form = SignupForm()
-    return render_template('flask_sign.html', form=form)
+    return render_template('signup.html', form=form)
+
+@app.route('/login', methods=['GET', 'POSTS'])
+def signin():
+    form = LoginForm()
+    return render_template('signin.html', form=form)
