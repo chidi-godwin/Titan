@@ -25,3 +25,7 @@ def signin():
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')
+
+@app.route('/print')
+def print():
+    return render_template('print.html')
