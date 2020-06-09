@@ -2,7 +2,7 @@ from app import app
 from app.forms import SignupForm, LoginForm
 from flask import render_template, redirect, url_for, request
 
-app.config['SECRET_KEY']='KNOWYOURWORTH'
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
