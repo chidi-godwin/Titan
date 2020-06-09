@@ -19,6 +19,9 @@
             <div>
                 {{ form.password(class_="input", placeholder='Password')}}
             </div>
+                <div style="float: left;">
+                    {{ form.remember_me.label}} {{ form.remember_me()}}
+               </div>
             <div class="footer">
                 {{ form.submit(class_='signup-btn') }}
                 <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></p>
