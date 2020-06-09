@@ -5,7 +5,7 @@ from flask import render_template, request
 app.config['SECRET_KEY']='KNOWYOURWORTH'
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return "hello World"
+    return render_template('index.html')
 
 @app.route('/signup', methods=['GET', 'POSTS'])
 def signup():
