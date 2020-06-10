@@ -60,7 +60,7 @@ def print():
 @app.route('/records')
 @login_required
 def records():
-    return render_template('table.html')
+    return render_template('report.html')
 
 @app.route('/profile')
 @login_required
