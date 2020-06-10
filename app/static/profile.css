@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  background-color: #f06b2e;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px 80px;
+}
+
+nav a {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px 80px;
+  color: #fff;
+  text-decoration: none;
+}
+
+h3 {
+  padding: 10px 150px;
+}
+
+.save-btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #f06b2e;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30px 100px;
+  grid-gap: 0;
+  width: 100%;
+}
+
+.row1 {
+  width: 40%;
+}
+
+.avatar {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  margin-right: 10px;
+  flex-direction: column;
+}
+
+.avatar button {
+  padding: 10px;
+  width: 185px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #f06b2e;
+}
+
+.icon {
+  font-size: 210px;
+  color: #929292;
+  border: 1px solid #747474;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.row2 {
+  width: 50%;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.pass {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input {
+  margin-top: 5px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #b9b9b9;
+}
+
+select {
+  margin-top: 5px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #b9b9b9;
+}

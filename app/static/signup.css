@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -29,6 +31,17 @@ form {
   display: flex;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 150px;
+  padding: 20px;
+  object-fit: contain;
+}
+
 input {
   background-color: none;
   border: none;
@@ -53,9 +66,36 @@ input {
   margin-bottom: 40px;
 }
 
+button {
+  width: 100%;
+  padding: 0.6em;
+  background-color: #f06b2e;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.line {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 1px solid #eeeeee;
+}
+
 .signup-btn:hover {
   opacity: 0.7;
   transition: opacity 500ms ease-in-out;
+}
+
+img {
+  object-fit: contain;
 }
 
 .footer {
@@ -70,7 +110,7 @@ input {
 
 @media (min-width: 1024px) {
   form {
-    margin: 40px auto 0 auto;
-    width: 40%;
+    margin: 35px auto 0 auto;
+    width: 25%;
   }
 }

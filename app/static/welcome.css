@@ -16,7 +16,17 @@ body {
 nav {
     background-color: #f06b2e;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+}
+
+.welcome {
+    font-size: 26px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.img {
+    height: 100px;
 }
 
 ul {
@@ -25,9 +35,9 @@ ul {
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
-    margin: 10px 80px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
 }
 
 ul li a {
@@ -35,8 +45,20 @@ ul li a {
     font-weight: bold;
 }
 
+ul li a:hover{
+    background: #f58d5c;
+}
+
+ul ul {
+    display: none;
+}
+
+ul li a:hover ul li a {
+    display: block;
+}
+
 p {
-    text-align: right;
+    text-align: left;
     padding: 20px;
 }
 
@@ -53,11 +75,11 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 60%;
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 1px 1px 12px 2px rgba(194, 194, 194, 1);
+    box-shadow: 1px 1px 12px 2px #d7d7d7;
 }
 
 .icon {
@@ -80,6 +102,6 @@ a {
 
 @media (min-width: 1024px) {
     .card1, .card2 {
-        width: 20%;
+        width: 40%;
     }
 }

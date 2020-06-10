@@ -13,7 +13,7 @@ def index():
 def signup():
     if current_user.is_authenticated:
         return redirect(url_for('welcome'))
-    form = SignupForm()
+    form = SignupForm(request.form)
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data, 
                     first_name=form.first_name.data, last_name=form.last_name.data)
