@@ -49,6 +49,7 @@ input {
   margin-top: 10px;
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
   margin-bottom: 40px;
 }
 
@@ -69,7 +70,7 @@ input {
 
 @media (min-width: 1024px) {
   form {
-    margin: 10% auto 0 auto;
+    margin: 40px auto 0 auto;
     width: 40%;
   }
 }

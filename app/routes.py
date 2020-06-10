@@ -6,9 +6,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
 @app.route('/', methods=['GET', 'POST'])
-@login_required
 def index():
-    return render_template('index.html')
+    return redirect(url_for('signin'))
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -29,7 +28,7 @@ def signup():
 def signin():
     if current_user.is_authenticated:
         return redirect(url_for('welcome'))
-    form = LoginForm()
+    form = LoginForm(request.form)
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first() or \
             User.query.filter_by(email=form.username.data).first()
