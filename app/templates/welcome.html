@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}">
     <title>MC PRINT - welcome</title>
 </head>
+
 <body>
+    <nav>
+        <img class="logo" src="static/images/logos/compucode-logo.png" alt="logo">
+        <ul>
+            <li><a href="{{ url_for('logout') }}">sign out</a></li>
+        </ul>
+    </nav>
+    <p>Welcome, Chioma Smith</p>
     <div class="container">
-        <label for="print-job">MC Print Job</label>
-        <div>
-            
-            <input type="text" id="print-job">
-            <a href="print.html">GO</a>
+        <div class="card1">
+            <i class="fa fa-print icon"></i>
+            <a href="{{ url_for('print') }}">MC PRINT JOB</a>
         </div>
-        <label for="report">MC Report</label>
-        <div>
-            
-            <input type="text" id="report">
-            <a href="report.html">GO</a>
+        <div class="card2">
+            <i class="fa fa-book icon"></i>
+            <a href="{{ url_for('records') }}">MC REPORT</a>
         </div>
     </div>
 </body>
+
 </html>
