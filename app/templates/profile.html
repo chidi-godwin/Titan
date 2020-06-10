@@ -4,30 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/profile.css">
+  <link rel="stylesheet" href="../static/styles/profile.css">
   <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
   <title>MC PRINT - Profile</title>
 </head>
 
 <body>
   <nav>
-    <img src="logos/compucode-logo.png" alt="logo" class="logo">
-    <a href="index.html">Sign out</a>
-  </nav>
-  <h3>USER DETAILS</h3>
-  <button class="save-btn">Save</button>
-  <div class="container">
-    <div class="row1">
-      <div class="avatar">
-        <i class="fa fa-user icon"></i>
-        <button>Change</button>
-      </div>
+    <div style="width: 100px;"></div>
+    <div class="dropdown" style="float: right;">
+        <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }} {{ current_user.last_name }}<i
+                class="fa fa-caret-down user-icon"></i></span>
+        <div class="dropdown-content">
+            <!-- <a class="nav-link" href="profile.html"><i class="fa fa-user user-icon"></i>Profile
+            </a> -->
+            <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
+        </div>
     </div>
+</nav>
+
+<div class="d-flex space-between">
+    <img src="../static/images/logos/compucode-logo.png" class="logo" alt="logo">
+    <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
+</div>
+
+
+ 
+  <div class="container">
     <div class="row2">
       <div class="inputs">
+        <h2>My Profile </h2>
+        <br>
         <div class="input">
           <label for="name">Name</label>
-          <input type="text" value="John Doe" id="name">
+          <input type="text" value="{{ current_user.first_name }} {{ current_user.last_name }}" id="name">
         </div>
         <div class="input">
           <label for="gender">Gender</label>
@@ -38,21 +48,31 @@
         </div>
         <div class="input">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" value="john@gmail.com">
+          <input type="email" name="email" id="email" value="{{ current_user.email }}">
         </div>
-        <span>Change Password</span>
-        <div class="input pass">
-          <label for="password">Old Password</label>
-          <input type="password" placeholder="Old Password" id="password">
-        </div>
+       <button class="change-password" type="submit">Update Profile</button>
+
+      </div>
+
+    </div>
+
+    <div class="row2">
+      <div class="inputs">
+
+        <h2>Change password</h2>
+        <br>
         <div class="input">
-          <label for="newPassword">New Password</label>
-          <input type="password" placeholder="New Password" id="newPassword">
+          <label for="name">Password</label>
+          <input type="password"  id="name">
         </div>
+
         <div class="input">
-          <label for="confirmPassword">Confirm Password</label>
-          <input type="password" placeholder="Confirm Password" id="confirmPassword">
+          <label for="confirmpassword">Confirm Password</label>
+          <input type="password"  id="name">
         </div>
+
+
+       <button class="change-password" type="submit">Change Password</button>
 
       </div>
 

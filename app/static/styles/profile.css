@@ -11,15 +11,26 @@ body {
   height: 100%;
   font-family: "Roboto", sans-serif;
 }
-
 nav {
-  background-color: #f06b2e;
+  /* background-color: #f06b2e; */
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 1px 12px 2px rgba(194, 194, 194, 1);
+}
+
+.d-flex {
   display: flex;
   justify-content: space-between;
 }
+.welcome {
+  font-size: 26px;
+  font-weight: 600;
+  padding-left: 20px;
+  color: #000;
+}
 
 .username {
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   padding: 5px;
 }
@@ -37,21 +48,24 @@ nav {
   position: relative;
   display: inline-block;
   margin: 25px 80px;
+  color: #000;
+}
+
+.nav-link {
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f06b2e;
+  background-color: #fff;
   border-radius: 5px;
   min-width: 170px;
-  min-height: 50px;
-  margin: 5px 0;
   z-index: 1;
 }
 
 .dropdown-content a {
   color: #fff;
+  background-color: #f06b2e;
   padding: 8px 15px;
   text-decoration: none;
   display: block;
@@ -67,27 +81,25 @@ nav {
 }
 
 .dropdown:hover .username {
-  color: #fff;
+  color: #000000;
 }
-
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
   margin: 10px 80px;
 }
-
 
 .save-profile {
   padding: 10px 15px;
   border: none;
-  background-color: #f06b2e;
+  background-color: #fc4e2b;
   color: #fff;
   text-transform: uppercase;
   margin: 20px 80px;
   border-radius: 5px;
   cursor: pointer;
 }
-
 
 .container {
   display: flex;
@@ -117,7 +129,7 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
-  background-color: #f06b2e;
+  background-color: #fc4e2b;
 }
 
 .icon {
@@ -163,7 +175,7 @@ select {
 .change-password {
   padding: 10px 15px;
   border: none;
-  background-color: #f06b2e;
+  background-color: #fc4e2b;
   color: #fff;
   text-transform: uppercase;
   border-radius: 5px;
