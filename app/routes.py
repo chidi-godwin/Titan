@@ -49,7 +49,7 @@ def logout():
     return redirect(url_for('index'))
 
 @app.route('/welcome')
-# @login_required
+@login_required
 def welcome():
     return render_template('welcome.html')
 
