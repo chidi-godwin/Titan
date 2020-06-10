@@ -7,7 +7,7 @@
       src="https://kit.fontawesome.com/ebc2490d80.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}" />
+    <link rel="stylesheet" href="../static/styles/welcome.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -18,31 +18,32 @@
 
   <body>
     <nav>
-      <img class="logo" src="static/images/logos/compucode-logo.png" alt="logo" />
-      <ul>
-        <li>
-          <a href="admin.html"><i class="fa fa-user"></i> {{ current_user.first_name }} {{ current_user.last_name }}</a>
-        </li>
-        <ul>
-          <li><a href="index.html">Profile</a></li>
-          <li>
-            <a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a>
-          </li>
-        </ul>
-      </ul>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+            <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }} {{ current_user.last_name }}<i
+                    class="fa fa-caret-down user-icon"></i></span>
+            <div class="dropdown-content">
+                <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
+                </a>
+                <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
+            </div>
+        </div>
     </nav>
-    <div class="container">
-      <p class="welcome">Welcome, {{ current_user.first_name }} {{ current_user.last_name }}</p>
+
+    <div class="d-flex space-between">
+        <img src="../static/images/logos/compucode-logo.png" class="logo" alt="logo">
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
     </div>
     <div class="container">
-      <div class="card1">
-        <img src="static/images/printer.png" class="img" />
-        <a href="{{ url_for('print') }}">MC PRINT JOB</a>
-      </div>
-      <div class="card2">
-        <img src="static/images/growth.png" class="img" />
-        <a href="{{ url_for('records') }}">MC REPORT</a>
-      </div>
+        <div class="card1">
+            <img src="../static/images/print.png" class="img" alt="icon">
+            <a href="{{ url_for('print') }}">MC PRINT JOB</a>
+        </div>
+        <div class="card2">
+            <img src="../static/images/report.png" class="img" alt="icon">
+            <a href="{{ url_for('records') }}">MC REPORT</a>
+        </div>
     </div>
+   
   </body>
 </html>
