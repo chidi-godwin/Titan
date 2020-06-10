@@ -18,7 +18,7 @@ nav {
 }
 
 .logo {
-    height: 150px;
+    height: 170px;
     padding: 20px;
     object-fit: contain;
 }
@@ -37,6 +37,8 @@ form {
     margin-top: 10px;
     margin-bottom: 20px;
     border-top: 1px solid #eeeeee;
+    height: 10px;
+    width: 40%;
 }
 
 .input {
@@ -63,6 +65,20 @@ input {
     margin-right: 10px;
 }
 
+
+.d-flex {
+    display: flex;
+    width: 100%;
+}
+
+.or {
+    text-align: center;
+    margin: 0px 20px 0px 20px;
+    font-size: 20px;
+    color: #817d7d;
+}
+
+
 button {
     width: 100%;
     padding: 0.6em;
@@ -77,12 +93,18 @@ button {
 .signup-button {
     width: 100%;
     padding: 0.6em;
-    background-color: #070625;
+    background-color: #302b95;
     border: none;
     border-radius: 2px;
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
+}
+
+.or-cont {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
 }
 
 a {
@@ -93,7 +115,7 @@ a {
 
 @media (min-width: 1024px) {
     form {
-        margin: 80px auto 0 auto;
+        margin: 0px auto 0 auto;
         width: 20%;
     }
 }

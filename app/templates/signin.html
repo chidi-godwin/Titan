@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/index.css">
     <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>MC PRINT - login</title>
@@ -48,12 +48,19 @@
                 </ul>
             {% endif %}
             {% endwith %}
+
             <button type="submit" id="submit" name="submit">Login</button>
             <button><a href="{{ url_for('signup') }}">Create an Account</a></button>
-            <div class="line"></div>
-            <button class="signup-button"><a href="">Sign up with Flexcube</a></button>
-        </form>
             
+            <div class="or-cont">
+                <div class="d-flex">
+                    <div class="line" width="30%"></div>
+                    <h2 class="or">OR</h2>
+                    <div class="line" width="30%"></div>
+                </div>
+            </div>
+            <button class="signup-button"><a href="">Sign in with Flexcube</a></button>
+        </form>  
     </div>
 </body>
 
