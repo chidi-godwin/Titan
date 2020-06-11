@@ -52,79 +52,17 @@
                 <th>Status</th>
                 <th>Date</th>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>1913567</td>
-                <td>100,000,000.00</td>
-                <td>Printed</td>
-                <td>13/06/20</td>
-              </tr>
-            </tbody>
+            </thead>              
+            {% for record in records %}
+              <tbody>
+                <tr>
+                  <td>{{ record.ref_id }}</td>
+                  <td>{{ record.amount }}</td>
+                  <td>Printed</td>
+                  <td>{{ record.date }}</td>
+                </tr>
+              </tbody>
+            {% endfor %}
           </table>
         </div>
       </div>

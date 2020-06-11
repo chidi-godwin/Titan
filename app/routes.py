@@ -61,7 +61,12 @@ def printer():
 @app.route('/records', methods=['GET', 'POST'])
 @login_required
 def records():
-    return render_template('report.html')
+    form = DateForm(request.form)
+    if form.validate_on_submit:
+        records = Transaction.query.filter(Transaction.date.between(form.fromm.data, form.to.data))
+        return render_template('report.html', records=records)
+    records = Transaction.query.all()
+    return render_template('report.html', records=records, form=form)
 
 @app.route('/profile')
 @login_required
