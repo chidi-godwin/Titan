@@ -10,74 +10,81 @@
 </head>
 
 <body>
-  <nav>
-    <div style="width: 100px;"></div>
-    <div class="dropdown" style="float: right;">
-        <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }} {{ current_user.last_name }}<i
-                class="fa fa-caret-down user-icon"></i></span>
-        <div class="dropdown-content">
+  <div class="page-container">
+    <div class="content-wrapper">
+      <nav>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+          <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }}
+            {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
+          <div class="dropdown-content">
             <!-- <a class="nav-link" href="profile.html"><i class="fa fa-user user-icon"></i>Profile
             </a> -->
             <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
+          </div>
         </div>
-    </div>
-</nav>
+      </nav>
 
-<div class="d-flex space-between">
-    <img src="../static/images/logos/compucode-logo.png" class="logo" alt="logo">
-    <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
-</div>
-
-
- 
-  <div class="container">
-    <div class="row2">
-      <div class="inputs">
-        <h2>My Profile </h2>
-        <br>
-        <div class="input">
-          <label for="name">Name</label>
-          <input type="text" value="{{ current_user.first_name }} {{ current_user.last_name }}" id="name">
+      <div class="d-flex space-between">
+        <div style="width: 100px; height: 100px; margin: 20px;">
+          <a href=""> <i class="fas fa-chevron-left"></i> &nbsp; Back </a>
         </div>
-        <div class="input">
-          <label for="gender">Gender</label>
-          <select name="gender" id="gender">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
-        <div class="input">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" value="{{ current_user.email }}">
-        </div>
-       <button class="change-password" type="submit">Update Profile</button>
-
+        <img src="logos/titan-logo.png" class="logo" alt="logo" />
       </div>
 
-    </div>
+      <div class="container">
+        <div class="row2">
+          <div class="inputs">
+            <h2>My Profile </h2>
+            <br>
+            <div class="input">
+              <label for="name">Name</label>
+              <input type="text" value="{{ current_user.first_name }} {{ current_user.last_name }}" id="name">
+            </div>
+            <div class="input">
+              <label for="gender">Gender</label>
+              <select name="gender" id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+            <div class="input">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" value="{{ current_user.email }}">
+            </div>
+            <button class="change-password" type="submit">Update Profile</button>
 
-    <div class="row2">
-      <div class="inputs">
+          </div>
 
-        <h2>Change password</h2>
-        <br>
-        <div class="input">
-          <label for="name">Password</label>
-          <input type="password"  id="name">
         </div>
 
-        <div class="input">
-          <label for="confirmpassword">Confirm Password</label>
-          <input type="password"  id="name">
+        <div class="row2">
+          <div class="inputs">
+
+            <h2>Change password</h2>
+            <br>
+            <div class="input">
+              <label for="name">Password</label>
+              <input type="password" id="name">
+            </div>
+
+            <div class="input">
+              <label for="confirmpassword">Confirm Password</label>
+              <input type="password" id="name">
+            </div>
+
+
+            <button class="change-password" type="submit">Change Password</button>
+
+          </div>
+
         </div>
-
-
-       <button class="change-password" type="submit">Change Password</button>
 
       </div>
-
     </div>
-
+    <footer class="footer">
+      <p class="footer-p">Powered By Compucode</p>
+    </footer>
   </div>
 </body>
 
