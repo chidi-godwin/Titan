@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -9,115 +10,130 @@
 
   <title>MC PRINT - Reports</title>
 </head>
+
 <body>
-  <nav>
-    <div style="width: 100px;"></div>
-    <div class="dropdown" style="float: right;">
-        <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }} {{ current_user.last_name }}<i
-                class="fa fa-caret-down user-icon"></i></span>
-        <div class="dropdown-content">
+  <div class="page-container">
+    <div class="content-wrapper">
+      <nav>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+          <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }}
+            {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
+          <div class="dropdown-content">
             <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
             </a>
             <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
+          </div>
         </div>
-    </div>
-</nav>
+      </nav>
 
-<div class="d-flex space-between">
-    <img src="../static/images/logos/compucode-logo.png" class="logo" alt="logo">
-    <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
-</div>
-  <div class="container">
-    
-    <label>From</label>
-    <input type="text">
-    <label>To</label>
-    <input type="text">                                                                                     
-  <div class="table-responsive">          
-  <table class="table">
-    <thead>
-      <tr>
-        <th>MC Unique ID</th>
-        <th>MC Value</th>
-        <th>Status</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1913567</td>
-        <td>100,000,000.00</td>
-        <td>Printed</td>
-        <td>13/06/20</td>
-      </tr>
-    </tbody>
-    <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-  </table>
+      <div class="d-flex space-between">
+        <div style="width: 100px; height: 100px; margin: 20px;">
+          <a href=""> <i class="fas fa-chevron-left"></i> &nbsp; Back </a>
+        </div>
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
+      </div>
+
+      <div class="container">
+
+        <div class="mb-5">
+          <label>From</label>
+          <input type="date" />
+          <label>To</label>
+          <input type="date" />
+        </div>
+
+        <br>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>MC Unique ID</th>
+                <th>MC Value</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>1913567</td>
+                <td>100,000,000.00</td>
+                <td>Printed</td>
+                <td>13/06/20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="footer-p">Powered By Compucode</p>
+    </footer>
   </div>
-  
-</div>
 </body>
+
 </html>
