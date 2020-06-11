@@ -21,8 +21,9 @@ nav {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
   margin: 10px 80px;
 }
 
