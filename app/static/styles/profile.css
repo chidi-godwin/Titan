@@ -72,8 +72,7 @@ nav {
 }
 
 .dropdown-content a:hover {
-  background-color: #ffffff;
-  color: #f06b2e;
+  background-color: #f06b2e;
 }
 
 .dropdown:hover .dropdown-content {

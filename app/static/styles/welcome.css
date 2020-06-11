@@ -61,6 +61,10 @@ nav {
     color: #000;
 }
 
+.nav-link {
+
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -78,8 +82,7 @@ nav {
 }
 
 .dropdown-content a:hover {
-    background-color: #ffffff;
-    color: #f06b2e;
+    background-color: #f06b2e;
 }
 
 .dropdown:hover .dropdown-content {
