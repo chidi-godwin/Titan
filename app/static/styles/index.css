@@ -36,7 +36,7 @@ form {
 .line {
     margin-top: 10px;
     margin-bottom: 20px;
-    border-top: 1px solid #eeeeee;
+    border-top: 2px solid #eeeeee;
     height: 10px;
     width: 40%;
 }

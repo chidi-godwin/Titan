@@ -22,28 +22,28 @@
 
             <h2>Login</h2>
             <br>
+            {% for error in form.username.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
             <div class="input">
                 <i class="fa fa-user icon"></i>
                 <input type="text" name="username" id="username" placeholder="Username or Email">
-                {% for error in form.username.errors %}
-                <span style="color: red;">{{ error }}</span>
-                {% endfor %}
             </div>
+            {% for error in form.password.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
             <div class="input">
                 <i class="fa fa-lock icon"></i>
                 <input type="password" name="password" id="password" placeholder="Password">
-                
-                {% for error in form.username.errors %}
-                    <span style="color: red;">{{ error }}</span>
-                {% endfor %}
     
             </div>
+
             {% with messages = get_flashed_messages() %}
         
             {% if messages %}
                 <ul>
                     {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <li> <span style="color: royalblue; font-size: 14px;">{{ message }}</span> </li>
                     {% endfor %}
                 </ul>
             {% endif %}
