@@ -68,7 +68,7 @@ def records():
 def profile():
     return render_template('profile.html')
 
-@app.route
+@app.route('/token')
 @login_required
 def token():
     return render_template('token.html')
