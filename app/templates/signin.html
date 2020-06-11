@@ -43,14 +43,14 @@
             {% if messages %}
                 <ul>
                     {% for message in messages %}
-                    <li> <span style="color: royalblue; font-size: 14px;">{{ message }}</span> </li>
+                    <li> <span style="color: royalblue; font-size: 14px; text-align: center;">{{ message }}</span> </li>
                     {% endfor %}
                 </ul>
             {% endif %}
             {% endwith %}
 
             <button type="submit" id="submit" name="submit">Login</button>
-            <button><a href="{{ url_for('signup') }}">Create an Account</a></button>
+            <button type="button"><a href="/signup">Create an Account</a></button>
             
             <div class="or-cont">
                 <div class="d-flex">
