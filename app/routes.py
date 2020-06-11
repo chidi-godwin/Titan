@@ -1,5 +1,5 @@
 from app import app, db
-from app.forms import SignupForm, LoginForm
+from app.forms import SignupForm, LoginForm, DateForm
 from app.models import User, Transaction
 from flask import render_template, redirect, url_for, request, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
@@ -55,10 +55,10 @@ def welcome():
 
 @app.route('/print')
 @login_required
-def print():
+def printer():
     return render_template('print.html')
 
-@app.route('/records')
+@app.route('/records', methods=['GET', 'POST'])
 @login_required
 def records():
     return render_template('report.html')

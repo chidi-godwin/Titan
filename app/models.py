@@ -1,5 +1,5 @@
 from app import db, login
-from datetime import datetime
+from datetime import datetime, date, time
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.ext.hybrid import hybrid_property
 from flask_login import UserMixin
@@ -25,7 +25,7 @@ class User(UserMixin, db.Model):
 class Transaction(db.Model):
     __tablename__ = 'transactions'
     id = db.Column(db.Integer, primary_key=True)
-    ref_id = db.Column(db.String(64), nullable=False, unique=True, index=True)
+    ref_id = db.Column(db.String(64), nullable=False, unique=True)
     account_name = db.Column(db.String(64), nullable=False)
     account_number = db.Column(db.String(11), nullable=False)
     amount = db.Column(db.Float, nullable=False, default=0.0)
@@ -33,6 +33,8 @@ class Transaction(db.Model):
     vat = db.Column(db.Float, nullable=False, default=123.67)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     trans_details = db.Column(db.String(255), nullable=False)
+    date = db.Column(db.Date, nullable=False, default=date.today())
+    time = db.Column(db.Time, nullable=False, default=time(datetime.now().hour, datetime.now().minute))
 
     def __repr__(self):
         return f"<Transaction {self.ref_id}>"

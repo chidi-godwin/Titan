@@ -1,8 +1,9 @@
 from app.models import User
 from flask_wtf import FlaskForm
 from flask import Markup
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
+from datetime import datetime
 
 class SignupForm(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired()])
@@ -28,3 +29,13 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+class DateForm(FlaskForm):
+    fromm = DateField('fromm', validators=[DataRequired()])
+    to = DateField('to', validators=[DataRequired()])
+
+    def validate_fromm(self, to, fromm):
+        date1 = fromm.datetime.strptime(to, '%Y-%m-%d')
+        date2 = to.datetime.strptime(fromm, '%Y-%m-%d')
+        if date1 > date2:
+            raise ValidationError('Invalid dates selected')
