@@ -32,13 +32,18 @@
             <i class="fa fa-user icon"></i>
             <input type="text" name="last_name" id="last_name" placeholder="Lastname" />
           </div>
+
+          {% for error in form.username.errors %}
+          <span style="color: red; font-size: 12px;">{{ error }}</span>
+          {% endfor %}
+
           <div class="input">
             <i class="fa fa-user icon"></i>
             <input type="text" name="username" id="username" placeholder="Username" />
           </div>
 
-          {% for error in form.username.errors %}
-          <span style="color: red;">{{ error }}</span>
+          {% for error in form.email.errors %}
+          <span style="color: red; font-size: 12px;">{{ error }}</span>
           {% endfor %}
 
           <div class="input">
@@ -46,8 +51,8 @@
             <input type="email" name="email" id="email" placeholder="Email" />
           </div>
 
-          {% for error in form.email.errors %}
-          <span style="color: red;">{{ error }}</span>
+          {% for error in form.confirm_email.errors %}
+          <span style="color: red; font-size: 12px;">{{ error }}</span>
           {% endfor %}
 
           <div class="input">
@@ -55,8 +60,8 @@
             <input type="email" name="confirm_email" id="confirm_email" placeholder="Comfirm email" />
           </div>
 
-          {% for error in form.confirm_email.errors %}
-          <span style="color: red;">{{ error }}</span>
+          {% for error in form.password.errors %}
+          <span style="color: red; font-size: 12px;">{{ error }}</span>
           {% endfor %}
 
           <div class="input">
@@ -64,22 +69,20 @@
             <input type="password" name="password" id="password" placeholder="Password" />
           </div>
 
-          {% for error in form.password.errors %}
-          <span style="color: red;">{{ error }}</span>
+          {% for error in form.confirm_password.errors %}
+          <span style="color: red; font-size: 12px;">{{ error }}</span><br>
           {% endfor %}
+
 
           <div class="input">
             <i class="fa fa-lock icon"></i>
             <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" />
           </div>
 
-          {% for error in form.confirm_password.errors %}
-          <span style="color: red;">{{ error }}</span><br>
-          {% endfor %}
 
           <button type="submit" id="submit" name="submit">Create an Account</button>
           <div class="line"></div>
-          <button type="button"><a href="{{ url_for('signin') }}">Login</a></button>
+          <a class="login-btn" href="{{ url_for('signin') }}">Login</a>
         </form>
       </div>
     </div>
