@@ -15,125 +15,148 @@ body {
   
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-.logo {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin: 10px 80px;
-}
-
 .container {
-  padding: 20px 50px;
-  margin: 50px auto 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 100px;
-}
-
-.box1 {
-  border: 1px solid #000;
-  margin-bottom: 30px;
-  height: 200px;
-}
-
-.box1 h2 {
-  padding: 50px 20px;
-  color: #e73131;
-}
-
-.box1 h4 {
-  padding: 10px;
-}
-
-.box2 {
-  border: 1px solid #000;
-  padding: 20px 0;
-  display: block;
-}
-
-.box3 {
-  height: 200px;
-  margin-top: 80px;
-  border: 1px solid #000;
-  margin-bottom: 30px;
+  height: 100%;
   position: relative;
-}
-
-.box3 h5 {
-  position: absolute;
-  top: 0;
-  right: 20px;
-}
-
-.inner1 {
-  border-bottom: 1px solid #000;
-}
-
-.inner1 p {
-  padding: 5px;
-}
-
-.inner2 p {
-  padding: 5px;
-}
-
-.col2 {
-  margin: 50px 0;
-}
-
-.amount div, .amount2 div {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.col2 div span {
-  color: #e73131;
-  margin-left: 30px;
-
-}
-
-.check {
-  position: relative;
-}
-
-
-.amount, .amount2 {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content: center;
+  padding: 40px 70px 0 40px;
 }
 
-.amount2 {
-  margin-top: 80px;
-}
-
-.cheque {
-  width: 80%;
-  padding: 20px 50px;
-  margin: 50px auto 0 auto;
-}
-
-.check h2 {
-  margin-top: 40px;
-  padding: 0 150px;
-}
-
-hr {
+.row1 {
+  display: flex;
+  width: 100%;
   margin-bottom: 20px;
 }
 
-.date {
-  display: flex;
-  width: 20%;
-  justify-content: space-evenly;
+.copy {
   position: absolute;
-  top: 0;
-  right: 20px;
+  top: -30px;
+  right: 60px;
+}
+
+
+.box1 {
+  height: 150px;
+  width: 380px;
+  border: 3px solid #000;
+}
+
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
+  width: 350px;
+  margin-bottom: 40px;
+  border: 3px solid #000;
+}
+
+.column1 p {
+  font-size: 12px;
+  font-weight: bolder;
+  padding: 10px 0;
+  width: 350px;
+}
+
+hr {
+  border: 1px solid #000;
+}
+
+.title {
+  padding-top: 15px;
+}
+
+.column2 {
+  margin: 90px 0 0 40px;
+  width: 20%;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+
+h4 {
+  padding: 10px 0;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.copy {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.copy2 {
+  position: absolute;
+  top: 35%;
+  right: 40px;
+
+}
+
+.left {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.date {
+  width: 100%;
+  display: flex;
+}
+.right h5 {
+  text-align: end;
+}
+
+h6 {
+  padding-left: 30px;
+}
+
+.name {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 140px;
+}
+
+.line {
+  border-bottom: 1px solid #000;
+  width: 350px;
+}
+
+.sum {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+.lines {
+  border-bottom: 1px solid #000;
+  width: 420px;
+  margin-bottom: 30px;
+}
+
+.signature {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 200px 0 120px;
+}
+
+h1 {
+  margin-top: 40px;
+  margin-left: 120px;
+  font-size: 24px;
 }

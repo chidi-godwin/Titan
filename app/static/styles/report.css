@@ -37,7 +37,22 @@ a:hover {
   text-decoration: none;
 }
 
+form label{
+    margin: 0px 20px;
+}
 
+form input {
+  padding: 5px;
+}
+
+.submit-btn {
+  background-color: #fc4e2b;
+  padding: 7px;
+  margin-left: 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none; 
+}
 
 .d-flex {
   display: flex;
@@ -152,7 +167,8 @@ p {
 }
 
 .footer-p {
-  text-align: center;
+  text-align: right;
+  margin-right: 20px;
   color: #fc4e2b;
   font-weight: 600;
 }

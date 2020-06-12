@@ -120,7 +120,8 @@ nav {
 }
 
 .footer-p {
-    text-align: center;
+    text-align: right;
+    margin-right: 20px;
     color: #fc4e2b;
     font-weight: 600;
 }

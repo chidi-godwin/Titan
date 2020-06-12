@@ -67,7 +67,8 @@ input {
 
 .footer p {
     font-size: 0.7em;
-    text-align: center;
+    text-align: right;
+    margin-right: 20px;
 }
 
 

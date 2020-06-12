@@ -90,6 +90,10 @@ nav {
     width: 70%;
     margin: 0 auto;
 }
+
+h2 {
+    font-size: 14px;
+}
 .dropdown-content a:hover {
     background-color: #fc4e2b;
     color: #ffffff;
@@ -120,13 +124,14 @@ nav {
 }
 
 .footer-p {
-    text-align: center;
+    text-align: right;
     color: #fc4e2b;
     font-weight: 600;
 }
 
 .footer {
     position: absolute;
+    margin-right: 20px;
     width: 100%;
     bottom: 0;
     background-color: #ffffff;
