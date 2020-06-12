@@ -1,6 +1,6 @@
 from app import app, db
 from app.forms import SignupForm, LoginForm, DateForm
-from app.models import User, Transaction
+from app.models import User, Transaction, Role
 from flask import render_template, redirect, url_for, request, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
@@ -17,7 +17,8 @@ def signup():
     if form.validate_on_submit():
         print(form)
         user = User(username=form.username.data, email=form.email.data, 
-                    first_name=form.first_name.data, last_name=form.last_name.data)
+                    first_name=form.first_name.data, last_name=form.last_name.data, 
+                    role=Role.query.filter_by(role='Teller').first()) 
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()

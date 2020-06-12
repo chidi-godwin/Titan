@@ -13,6 +13,7 @@ class User(UserMixin, db.Model):
     last_name = db.Column(db.String(250), nullable=False)
     password_hash = db.Column(db.String(128))
     transactions = db.relationship('Transaction', backref='officer', lazy='dynamic')
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
 
     def __repr__(self):
         return f"<User {self.username}>"
@@ -22,6 +23,7 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
 class Transaction(db.Model):
     __tablename__ = 'transactions'
     id = db.Column(db.Integer, primary_key=True)
@@ -42,6 +44,15 @@ class Transaction(db.Model):
     @hybrid_property
     def total_debit(self):
         return self.amount + self.commission + self.vat
+
+class Role(db.Model):
+    __tablename__='roles'
+    id = db.Column(db.Integer, primary_key=True)
+    role = db.Column(db.String(64), nullable=False, unique=True)
+    users = db.relationship('User', backref='role', lazy='dynamic')
+
+    def __repr__(self):
+        return f"<Role {self.role}>"
 
 @login.user_loader
 def load_user(username):
