@@ -10,32 +10,25 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../static/styles/admin.css" />
+    <link rel="stylesheet" href="../static/styles/manager.css?version=1" />
     <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
-    <title>MC PRINT - Admin</title>
+    <title>MC PRINT - Manager</title>
   </head>
   <body>
     <nav>
       <img src="../static/images/logos/compucode-logo.png" alt="logo" class="logo" />
       <a href="{{ url_for('logout') }}">Sign out</a>
     </nav>
-    <aside>
-      <h3>Create User</h3>
-      <form method="post">
-        <input type="email" placeholder="Email Address" />
-        <button>ADD</button>
-      </form>
-    </aside>
-    <h5>Welcome, Admin {{ current_user.username }}</h5>
+    <h5>Welcome, Manager {{ current_user.username }}</h5>
     <main>
       
-      <p>Users</p>
+      <p>Tellers</p>
       <div class="container">
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">User</th>
+                <th scope="col">Teller</th>
                 <th scope="col">Email</th>
                 <th scope="col">Created At</th>
                 <th scope="col"></th>
@@ -82,6 +75,10 @@
           </table>
         </div>
       </div>
+      
     </main>
+    <footer class="footer">
+      <p class="footer-p">Powered By Compucode</p>
+    </footer>
   </body>
 </html>

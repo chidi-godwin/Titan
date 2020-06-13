@@ -33,58 +33,21 @@ nav a {
   text-decoration: none;
 }
 
-aside {
-  width: 20%;
-  border-right: 1px solid rgb(172, 172, 172);
-  height: 100vh;
-}
 
 main {
-  position: absolute;
+  margin: 40px auto;
   top: 100px;
   left: 22%;
-  width: 70%;
+  width: 100%;
 }
 
 main p {
   font-weight: bold;
-  padding: 0 20px;
+  padding: 0 80px;
 }
 
 table {
   width: 70%;
-}
-
-form {
-  padding: 50px 30px;
-}
-
-form input {
-  width: 100%;
-  margin: 2px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 3px;
-  padding-left: 5px;
-  border: 1px solid #afafaf;
-}
-
-button {
-  width: 100%;
-  padding: 0.6em;
-  background-color: #fc4e2b;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-aside h3 {
-  text-align: left;
-  padding: 20px 30px;
-  font-weight: bold;
-  font-size: 16;
 }
 
 h5 {
