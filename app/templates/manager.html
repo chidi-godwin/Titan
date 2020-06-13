@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/styles/manager.css?version=1" />
+    <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
+    <title>MC PRINT - Manager</title>
+  </head>
+  <body>
+    <nav>
+      <img src="../static/images/logos/compucode-logo.png" alt="logo" class="logo" />
+      <a href="{{ url_for('logout') }}">Sign out</a>
+    </nav>
+    <h5>Welcome, Manager {{ current_user.username }}</h5>
+    <main>
+      
+      <p>Tellers</p>
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Teller</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created At</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">John Doe</th>
+                <td>john@gmail.com</td>
+                <td>08/06/2020</td>
+                <td><i class="fa fa-trash"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">John Doe</th>
+                <td>john@gmail.com</td>
+                <td>08/06/2020</td>
+                <td><i class="fa fa-trash"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">John Doe</th>
+                <td>john@gmail.com</td>
+                <td>08/06/2020</td>
+                <td><i class="fa fa-trash"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">John Doe</th>
+                <td>john@gmail.com</td>
+                <td>08/06/2020</td>
+                <td><i class="fa fa-trash"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">John Doe</th>
+                <td>john@gmail.com</td>
+                <td>08/06/2020</td>
+                <td><i class="fa fa-trash"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">John Doe</th>
+                <td>john@gmail.com</td>
+                <td>08/06/2020</td>
+                <td><i class="fa fa-trash"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </main>
+    <footer class="footer">
+      <p class="footer-p">Powered By Compucode</p>
+    </footer>
+  </body>
+</html>
