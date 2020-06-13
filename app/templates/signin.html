@@ -23,7 +23,7 @@
                     {{ form.hidden_tag() }}
 
                     <h2>Login</h2>
-                    <br>
+                    <br />
                     {% for error in form.username.errors %}
                     <span style="color: red; font-size: 12px;">{{ error }}</span>
                     {% endfor %}
@@ -43,9 +43,9 @@
                     {% with messages = get_flashed_messages() %}
 
                     {% if messages %}
-                        {% for message in messages %}
-                        <span style="color: red; font-size: 12px; text-align: center;">{{ message }}</span><br>
-                        {% endfor %}
+                    {% for message in messages %}
+                    <span style="color: red; font-size: 12px; text-align: center;">{{ message }}</span><br>
+                    {% endfor %}
                     {% endif %}
                     {% endwith %}
 
@@ -53,6 +53,7 @@
                     <div class="width=" 100%>
                         <a href="/signup" class="btn-create">Create an Account</a>
                     </div>
+
                     <div class="or-cont">
                         <div class="d-flex">
                             <div class="line" width="30%"></div>
@@ -68,10 +69,11 @@
                 </form>
             </div>
         </div>
-        <footer class="footer">
-            <p class="footer-p">Powered By Compucode</p>
-        </footer>
+
     </div>
+    <footer class="footer">
+        <p class="footer-p">Powered By Compucode</p>
+    </footer>
 </body>
 
 </html>
