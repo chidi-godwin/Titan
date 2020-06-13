@@ -25,7 +25,7 @@
               <a class="nav-link" href="{{ url_for('manager') }}"><i class="fa fa-user user-icon"></i>Tellers</a>
 
             {% elif role == '<Role Admin>' %}
-              <a class="nav-link" href="{{ url_for('Admin') }}"><i class="fa fa-user user-icon"></i>Managers</a>
+              <a class="nav-link" href="{{ url_for('admin') }}"><i class="fa fa-user user-icon"></i>Managers</a>
 
             {% elif role ==  '<Role Superuser>' %}
               <a class="nav-link" href="{{ url_for('dashboard') }}"><i class="fa fa-user user-icon"></i>Dashboard</a> 

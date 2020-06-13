@@ -81,7 +81,7 @@ def profile():
 def token():
     return render_template('token.html')
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin():
     return render_template('admin.html')
 
