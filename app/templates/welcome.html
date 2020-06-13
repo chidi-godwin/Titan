@@ -1,66 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/ebc2490d80.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../static/styles/welcome.css?version=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
 
-    <title>MC PRINT - welcome</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../static/styles/welcome.css?version=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="page-container">
-      <div class="content-wrap">
-        <nav>
-          <div style="width: 100px;"></div>
-          <div class="dropdown" style="float: right;">
-            <span class="username"
-              ><i class="fa fa-user user-icon"></i>{{ current_user.first_name }} {{ current_user.last_name }}<i
-                class="fa fa-caret-down user-icon"
-              ></i
-            ></span>
-            <div class="dropdown-content">
-              <a class="nav-link" href="{{ url_for('profile') }}"
-                ><i class="fa fa-user user-icon"></i>Profile
-              </a>
-              <a class="nav-link" href="{{ url_for('logout') }}"
-                ><i class="fa fa-sign-out user-icon"></i>Logout</a
-              >
-            </div>
-          </div>
-        </nav>
+  <title>MC PRINT - welcome</title>
+</head>
 
-        <div class="d-flex space-between">
-          <div style="width: 100px;"></div>
-          <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
-        </div>
-
-        <div class="text-cont">
-          <h2>Welcome {{ current_user.first_name }}</h2>
-        </div>
-        <div class="container">
-          <div class="card1">
-            <img src="../static/images/print.png" class="img" alt="icon" />
-            <a href="{{ url_for('token') }} ">MC PRINT JOB</a>
-          </div>
-          <div class="card2">
-            <img src="../static/images/report.png" class="img" alt="icon" />
-            <a href="{{ url_for('records') }}">MC REPORT</a>
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <nav>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+          <span class="username"><i class="fa fa-user user-icon"></i>{{ current_user.first_name }}
+            {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
+          <div class="dropdown-content">
+            <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
+            </a>
+            <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
           </div>
         </div>
+      </nav>
+
+      <div class="d-flex space-between">
+        <div style="width: 100px;"></div>
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
       </div>
 
-      <footer class="footer">
-        <p class="footer-p">Powered By Compucode</p>
-      </footer>
+      <div class="text-cont">
+        <h2>Welcome {{ current_user.first_name }}</h2>
+      </div>
+      <div class="container">
+        <div class="card1">
+          <img src="../static/images/print.png" class="img" alt="icon" />
+          <a href="{{ url_for('token') }} ">MC PRINT JOB</a>
+        </div>
+        <div class="card2">
+          <img src="../static/images/report.png" class="img" alt="icon" />
+          <a href="{{ url_for('records') }}">MC REPORT</a>
+        </div>
+      </div>
     </div>
-  </body>
+
+    <footer class="footer">
+      <p class="footer-p">Powered By Compucode</p>
+    </footer>
+  </div>
+</body>
+
 </html>
