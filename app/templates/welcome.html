@@ -20,8 +20,17 @@
           <span class="username"><i class="fa fa-user user-icon"></i>{{ current_user.first_name }}
             {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
           <div class="dropdown-content">
-            <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
-            </a>
+            <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile</a>
+            {% if role == '<Role Manager>' %}
+              <a class="nav-link" href="{{ url_for('manager') }}"><i class="fa fa-user user-icon"></i>Tellers</a>
+
+            {% elif role == '<Role Admin>' %}
+              <a class="nav-link" href="{{ url_for('admin') }}"><i class="fa fa-user user-icon"></i>Managers</a>
+
+            {% elif role ==  '<Role Superuser>' %}
+              <a class="nav-link" href="{{ url_for('dashboard') }}"><i class="fa fa-user user-icon"></i>Dashboard</a> 
+
+            {% endif %}
             <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
           </div>
         </div>

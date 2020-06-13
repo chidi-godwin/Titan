@@ -52,7 +52,9 @@ def logout():
 @app.route('/welcome')
 @login_required
 def welcome():
-    return render_template('welcome.html')
+    role = User.query.filter_by(username=current_user.username).first().role
+    print(str(role))
+    return render_template('welcome.html', role=str(role))
 
 @app.route('/print')
 @login_required
@@ -79,10 +81,18 @@ def profile():
 def token():
     return render_template('token.html')
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    return render_template('admin.html')
+    return render_template('managers.html')
 
 @app.route('/manager')
 def manager():
     return render_template('manager.html')
+
+@app.route('/managerteller')
+def managerteller():
+    return render_template('managerTellers.html')
+
+@app.route('/users')
+def users():
+    return render_template('users.html')
