@@ -13,6 +13,10 @@ body {
     sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 nav {
   background-color: #fc4e2b;
   display: flex;
@@ -51,8 +55,56 @@ main p {
   padding: 0 20px;
 }
 
+main .add-btn {
+  background-color: #fc4e2b !important;
+  outline: none !important;
+  border: none;
+  width: 150px;
+}
+
+.add-btn:focus {
+  outline: none !important;
+}
+
+.modal-btn {
+  width: 150px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  background-color: #fc4e2b !important;
+  border: none !important;
+  margin-bottom: 20px !important;
+}
+
+.close {
+  text-align: right !important;
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  right: 60px;
+}
+
+.close:focus {
+  outline: none !important;
+}
+
 table {
   width: 70%;
+  margin-top: 20px;
+}
+
+.add-btn-table {
+  padding: 5px 10px;
+  background-color: #e0dddd;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #000;
+}
+
+.add-btn-table:hover {
+  background-color: #fc4e2b;
+  color: #fff;
 }
 
 form {

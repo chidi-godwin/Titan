@@ -83,8 +83,16 @@ def token():
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    return render_template('admin.html')
+    return render_template('managers.html')
 
 @app.route('/manager')
 def manager():
     return render_template('manager.html')
+
+@app.route('/managerteller')
+def managerteller():
+    return render_template('managerTellers.html')
+
+@app.route('/users')
+def users():
+    return render_template('users.html')

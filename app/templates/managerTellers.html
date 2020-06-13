@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/superUser.css">
+  <link rel="stylesheet" href="../static/styles/superUser.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <title>MC PRINT - tellers</title>
 </head>
@@ -12,17 +12,17 @@
     <div class="content-wrap">
       <aside>
         <div class="img">
-          <img src="../logos/titan-logo.png" alt="">
+          <img src="../static/images/logos/titan-logo.png" alt="">
         </div>  
        
         <div>
           <h5>Welcome, Admin</h5>
         </div>
         <div class="links">
-          <a href="users.html">Users</a>
+          <a href="{{ url_for('users') }}">Users</a>
           <a href="">Managers</a>
           <a href="">Tellers</a>
-          <a href="../index.html">Sign out</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
       <main>
