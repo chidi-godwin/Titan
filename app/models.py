@@ -37,7 +37,7 @@ class Transaction(db.Model):
     trans_details = db.Column(db.String(255), nullable=False)
     date = db.Column(db.Date, nullable=False, default=date.today())
     time = db.Column(db.Time, nullable=False, default=time(datetime.now().hour, datetime.now().minute))
-
+    
     def __repr__(self):
         return f"<Transaction {self.ref_id}>"
 
