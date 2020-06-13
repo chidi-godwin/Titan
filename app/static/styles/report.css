@@ -146,7 +146,7 @@ p {
 
 
 .container {
-  margin: 50px auto 0 auto;
+  margin: 10px auto 0 auto;
   width: 70%;
   height: 80%;
   background-color: #fff;
@@ -168,14 +168,12 @@ p {
 
 .footer-p {
   text-align: right;
-  margin-right: 20px;
-  color: #fc4e2b;
-  font-weight: 600;
+    color: #000;
+    margin-right: 10px;
 }
 
 .footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  background-color: #ffffff;
 }
