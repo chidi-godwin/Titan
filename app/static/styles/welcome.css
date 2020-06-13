@@ -86,13 +86,14 @@ nav {
 
 .text-cont {
     font-size: 20px;
-    font-weight: 400;
     width: 70%;
     margin: 0 auto;
 }
 
 h2 {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400 !important;
+
 }
 .dropdown-content a:hover {
     background-color: #fc4e2b;
@@ -125,8 +126,8 @@ h2 {
 
 .footer-p {
     text-align: right;
-    color: #fc4e2b;
-    font-weight: 600;
+    color: #000;
+    margin-right: 20px;
 }
 
 .footer {
