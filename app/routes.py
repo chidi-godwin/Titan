@@ -78,3 +78,7 @@ def profile():
 @login_required
 def token():
     return render_template('token.html')
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
