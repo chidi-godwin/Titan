@@ -104,7 +104,11 @@ def users():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    users = len(User.query.all())
+    tellers = len(User.query.filter_by(role=Role.query.filter_by(role='Teller')).all())
+    managers = len(User.query.filter_by(role=Role.query.filter_by(role='Manager')).all())
+    admins = len(User.query.filter_by(role=Role.query.filter_by(role='Admin')).all())
+    return render_template('dashboard.html', users=users, tellers=tellers, managers=managers, admins=admins)
 
 @app.route('/addadmin')
 @login_required
