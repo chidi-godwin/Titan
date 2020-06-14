@@ -83,7 +83,8 @@ def token():
     transaction = Transaction.query.filter_by(ref_id=unique_id).first()
     if token and transaction:
         return render_template('print.html', transaction=transaction)
-    flash('Invalid token or id')
+    if not transaction:
+        flash('Invalid token or id')
     return render_template('token.html')
 
 @app.route('/admin', methods=['GET', 'POST'])
