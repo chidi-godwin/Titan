@@ -96,3 +96,23 @@ def managerteller():
 @app.route('/users')
 def users():
     return render_template('users.html')
+
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/addadmin')
+@login_required
+def addadmin():
+    return render_template('addAdmin.html')
+
+@app.route('/adminmanagers')
+@login_required
+def adminmanagers():
+    return render_template('adminManagers.html')
+
+@app.route('/tellers')
+@login_required
+def tellers():
+    return render_template('teller.html')

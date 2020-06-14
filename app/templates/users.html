@@ -19,14 +19,15 @@
           <h5>Welcome, SuperUser {{ current_user.first_name }}</h5>
         </div>
         <div class="links">
-          <a href="{{ url_for('users') }}">Dashboard</a>
-          <a href="">Managers</a>
-          <a href="">Tellers</a>
+          <a href="{{ url_for('dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('adminmanagers') }}">Managers</a>
+          <a href="{{ url_for('tellers') }}">Tellers</a>
+          <a href="{{ url_for('dashboard') }}">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
       <main>
-        <h4>Users</h4>
+        <h4>Officers</h4>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
