@@ -44,7 +44,7 @@ nav {
 
 .container {
   position: relative;
-  width: 70%;
+  width: 80%;
   margin: 20px auto;
 }
 
@@ -55,7 +55,7 @@ nav {
 }
 
 .copy h3 {
-  font-size: 14px;
+  font-size: 15px;
   padding-left: 15px;
   line-height: 0.6;
 }
@@ -80,21 +80,38 @@ nav {
 
 .column2 {
   display: block;
-  margin-top: 200px;
+  margin-top: 120px;
   width: 43%;
 }
 
 .price {
   display: flex;
-  width: 150px;
+  width: 280px;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
+.amounts {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.amount {
+  margin-left: 40px;
+  color: #a81219;
+}
+
 .box1 {
   height: 170px;
-  border: 3px solid #000;
-  margin-top: 70px;
+    border: 3px solid #000;
+}
+
+
+.box1 h2 {
+  color: #a81219;
+  padding-top: 50px;
+  margin-left: 10px;
 }
 
 .box2 {
@@ -109,6 +126,13 @@ nav {
     margin-top: 20px;
 }
 
+.fills {
+  font-size: 16px;
+  color: #a81219;
+  margin-left: 5px;
+  font-weight: bolder;
+}
+
 .sub-title, .sub-title2 {
   font-size: 14px;
   font-weight: bolder;
@@ -116,11 +140,11 @@ nav {
 }
 
 .title {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .title1 {
-  font-size: 12px;
+  font-size: 14px;
   position: absolute;
   top: 20px;
   border-bottom: 1px solid #000;
@@ -132,11 +156,10 @@ nav {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 50px;
 }
 
 .copy2 h3 {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 0.6;
 }
 
@@ -145,13 +168,13 @@ nav {
 }
 
 .left h5 {
-  margin-left: 230px;
+  margin-left: 40px;
 }
 
 .right {
   position: absolute;
   top: 0;
-  right: 40px;
+  right: 70px;
 
 }
 
@@ -159,21 +182,29 @@ nav {
   display: flex;
   width: 150px;
   justify-content: space-between;
-  text-align: right;
-  float: right;
+  margin-bottom: 10px;
 }
 
-.date h6 {
-  justify-content: end;
+.format {
+  color: #a81219;
+  padding-right: 20px;
 }
 
 .name {
-  width: 90%;
+  width: 100%;
   display: inline-flex;
   margin-top: 60px;
   padding-right: 20px;
   justify-content: flex-end;
-  float: right;
+  position: relative;
+}
+
+.name h2 {
+  color: #a81219;
+  position: absolute;
+  top: -8px;
+  left: 350px;
+  font-size: 16px;
 }
 
 .line {
@@ -183,12 +214,20 @@ nav {
 
 .sum {
   display: flex;
-  width: 82%;
+  width: 100%;
   padding-right: 20px;
   justify-content: flex-end;
-  margin-left: 50px;
-  float: right;
+  margin-left: 70px;
   margin-top: 20px;
+  position: relative;
+}
+
+.sum h2 {
+  color: #a81219;
+  position: absolute;
+  top: -8px;
+  left: 280px;
+  font-size: 16px;
 }
 
 .line-stack {
@@ -197,15 +236,14 @@ nav {
 
 .lines {
   border-bottom: 1px solid #000;
-    width: 97%;
+    width: 93%;
     margin-bottom: 30px;
     margin-top: 10px;
 }
 
 .signature {
   display: flex;
-  width: 85%;
-  float: right;
+  width: 100%;
   justify-content: space-evenly;
 }
 
@@ -213,10 +251,13 @@ nav {
   padding-right: 280px;
 }
 
+.signature span {
+  color: #a81219;
+  font-size: 16px;
+}
+
 h1 {
-  position: relative;
-  margin: 250px 0px 40px 250px;
-  padding-top: 20px;
+  margin: 70px 0 20px 180px;
 }
 
 @media print {
@@ -227,6 +268,7 @@ h1 {
     height: 130px;
       border: 3px solid #000;
   }
+
 
   .box2 {
     display: flex;
@@ -260,7 +302,32 @@ h1 {
   h1 {
     margin: 70px 0 20px 90px;
   }
-  .container {
-    width: 80%;
+  .name h2 {
+    left: 180px;
+    font-size: 12px;
+    top: -5px;
+  }
+
+  .sum h2 {
+    left: 170px;
+    font-size: 12px;
+    top: -5px;
+  }
+
+  .sum {
+    margin-left: 10px;
+  }
+
+  .fills {
+    font-size: 13px;
+  }
+
+  .title, .title1 {
+    font-size: 12px;
+  }
+
+  .box1 h2 {
+    padding-top: 40px;
+    margin-left: 10px;
   }
 }

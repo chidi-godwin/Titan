@@ -75,9 +75,15 @@ def records():
 def profile():
     return render_template('profile.html')
 
-@app.route('/token')
+@app.route('/token', methods=['GET', 'POST'])
 @login_required
 def token():
+    form = request.form 
+    unique_id =form.get('mc_unique_id')
+    transaction = Transaction.query.filter_by(ref_id=unique_id).first()
+    if token and transaction:
+        return render_template('print.html', transaction=transaction)
+    flash('Invalid token or id')
     return render_template('token.html')
 
 @app.route('/admin', methods=['GET', 'POST'])
