@@ -15,7 +15,6 @@ def signup():
         return redirect(url_for('welcome'))
     form = SignupForm(request.form)
     if form.validate_on_submit():
-        print(form)
         user = User(username=form.username.data, email=form.email.data, 
                     first_name=form.first_name.data, last_name=form.last_name.data, 
                     role=Role.query.filter_by(role='Teller').first()) 
@@ -82,18 +81,23 @@ def token():
     return render_template('token.html')
 
 @app.route('/admin', methods=['GET', 'POST'])
+@login_required
 def admin():
     return render_template('managers.html')
 
 @app.route('/manager')
+@login_required
 def manager():
+
     return render_template('manager.html')
 
 @app.route('/managerteller')
+@login_required
 def managerteller():
     return render_template('managerTellers.html')
 
 @app.route('/users')
+@login_required
 def users():
     return render_template('users.html')
 
