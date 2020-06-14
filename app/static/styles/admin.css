@@ -13,6 +13,10 @@ body {
     sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 nav {
   background-color: #fc4e2b;
   display: flex;
@@ -39,10 +43,6 @@ aside {
   height: 100vh;
 }
 
-aside h5 {
-  text-align: center;
-}
-
 main {
   position: absolute;
   top: 100px;
@@ -55,8 +55,56 @@ main p {
   padding: 0 20px;
 }
 
+main .add-btn {
+  background-color: #fc4e2b !important;
+  outline: none !important;
+  border: none;
+  width: 150px;
+}
+
+.add-btn:focus {
+  outline: none !important;
+}
+
+.modal-btn {
+  width: 150px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  background-color: #fc4e2b !important;
+  border: none !important;
+  margin-bottom: 20px !important;
+}
+
+.close {
+  text-align: right !important;
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  right: 60px;
+}
+
+.close:focus {
+  outline: none !important;
+}
+
 table {
   width: 70%;
+  margin-top: 20px;
+}
+
+.add-btn-table {
+  padding: 5px 10px;
+  background-color: #e0dddd;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #000;
+}
+
+.add-btn-table:hover {
+  background-color: #fc4e2b;
+  color: #fff;
 }
 
 form {
@@ -84,35 +132,32 @@ button {
   margin-bottom: 20px;
 }
 
-aside h3 {
-  text-align: left;
-  padding: 20px 30px;
-  font-weight: bold;
-  font-size: 16;
+aside h5 {
+  text-align: center;
 }
 
-h5 {
-  text-align: right;
-  position: absolute;
-  top: 80px;
-  right: 20px;
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
 }
+
+
+
 
 .footer-p {
-  position: absolute;
-  right: 20px;
   text-align: right;
   color: #000;
+  font-weight: 400;
   margin-right: 20px;
 }
 
 .footer {
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  display: flex;
+  margin-top: 30px;
+  position: relative;
+  display: block;
   width: 100%;
-  height: 50px;
+  height: 30px;
   bottom: 0;
   background-color: #ffffff;
 }
@@ -175,3 +220,70 @@ h2 {
 .dropdown:hover .username {
   color: #ffffff;
 }
+
+.img img {
+  width: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.links {
+  display: block;
+}
+
+.links a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #000;
+  margin-top: 30px;
+  width: 80%;
+}
+
+.links a:active {
+  border-left: 2px #fc4e2b solid;
+}
+
+.links a:hover {
+  background-color: #fc4e2b;
+  color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 20px;
+  background-color: #fff;
+  padding: 1px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 2px #eee;
+}
+
+.card-body {
+  display: block;
+}
+
+.card-body p  {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.title {
+  text-align: center;
+  font-size: 16px !important;
+}
+
