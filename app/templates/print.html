@@ -75,23 +75,22 @@
             <div class="amount-box-text">
               <p class="amount-box-text-title">AMOUNT</p>
               <p class="amount-text-detail">₦</p>
-              {% set amount = "{0:.2f}".format(transaction.amount) %}
               <p class="amount-text-detail-fill">{{ amount }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">COMMISSION</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.commission }}</p>
+              <p class="amount-text-detail-fill">{{ commission }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">VAT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.vat }}</p>
+              <p class="amount-text-detail-fill">{{ vat }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">TOTAL DEBIT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.total_debit }}</p>
+              <p class="amount-text-detail-fill">{{ total_debit }}</p>
             </div>
           </div>
         </div>
@@ -140,17 +139,17 @@
             <div class="amount-box-text">
               <p class="amount-box-text-title">COMMISSION</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.commission }}</p>
+              <p class="amount-text-detail-fill">{{ commission }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">VAT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.vat }}</p>
+              <p class="amount-text-detail-fill">{{ vat }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">TOTAL DEBIT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.total_debit }}</p>
+              <p class="amount-text-detail-fill">{{ total_debit }}</p>
             </div>
           </div>
         </div>
@@ -221,7 +220,7 @@
           </div>
           <div class="amount-fills">
             <p>
-              {{ amount_in_words }}
+              {{ amount_in_words|capitalize }}
             </p>
           </div>
         </div>
@@ -232,7 +231,7 @@
       <div class="authorized">
         <p>Authorized Signature</p>
         <p class="amount-text-detail">
-          ₦ <span class="amount-text-fill">{{ transaction.total_debit }}</span>
+          ₦ <span class="amount-text-fill">{{ total_debit }}</span>
         </p>
       </div>
     </div>

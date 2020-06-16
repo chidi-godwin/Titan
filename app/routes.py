@@ -83,10 +83,19 @@ def token():
     print(unique_id)
     if unique_id is not None:
         transaction = Transaction.query.filter_by(ref_id=unique_id).first()
-        words = inflect.engine()
-        amount_in_words = words.number_to_words(transaction.amount)
         if transaction:
-            return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words)
+            words = inflect.engine()
+            naira, kobo = list(map(int,str(transaction.total_debit).split('.')))
+            naira_in_words = words.number_to_words(naira)
+            kobo_in_words = words.number_to_words(kobo)
+            amount_in_words = (' and ').join([naira_in_words, kobo_in_words+' kobo'])
+            numbers = {
+                'amount': f"{transaction.amount:,.2f}",
+                'vat': f"{transaction.vat:,.2f}",
+                'commission': f"{transaction.commission:,.2f}",
+                'total_debit': f"{transaction.total_debit:,.2f}"
+            }
+            return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words, **numbers)
         else:
             flash('Invalid token or ID')
     return render_template('token.html')
