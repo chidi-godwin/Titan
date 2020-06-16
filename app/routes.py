@@ -79,11 +79,13 @@ def profile():
 def token():
     form = request.form 
     unique_id =form.get('mc_unique_id')
-    transaction = Transaction.query.filter_by(ref_id=unique_id).first()
-    if token and transaction:
-        return render_template('print.html', transaction=transaction)
-    if not transaction:
-        flash('Invalid token or id')
+    print(unique_id)
+    if unique_id is not None:
+        transaction = Transaction.query.filter_by(ref_id=unique_id).first()
+        if transaction:
+            return render_template('print.html', transaction=transaction)
+        else:
+            flash('Invalid token or ID')
     return render_template('token.html')
 
 @app.route('/admin', methods=['GET', 'POST'])
