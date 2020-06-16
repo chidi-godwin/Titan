@@ -178,8 +178,10 @@
       <div class="excerpts-flex">
         <p></p>
         <div class="date fill">
+          {% set month = {1:'JAN', 2:'FEB', 3:'MAR', 4:'APR', 5:'MAY', 6:'JUN', 
+                          7:'JUL', 8:'AUG', 9:'SEP', 10:'OCT', 11:'NOV', 12:'DEC'} %}
           <p>{{ transaction.date.day }}</p>
-          <p>{{ transaction.date.month }}</p>
+          <p>{{ month[transaction.date.month] }}</p>
           <p>{{ transaction.date.year }}</p>
         </div>
       </div>
