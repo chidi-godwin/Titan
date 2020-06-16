@@ -52,7 +52,6 @@ def logout():
 @login_required
 def welcome():
     role = User.query.filter_by(username=current_user.username).first().role
-    print(str(role))
     return render_template('welcome.html', role=str(role))
 
 @app.route('/print')
