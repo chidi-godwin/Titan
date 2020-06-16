@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/newprint.css?version=1" />
+    <link rel="stylesheet" href="../static/styles/print.css?version=1" />
     <script
       src="https://kit.fontawesome.com/ebc2490d80.js"
       crossorigin="anonymous"
@@ -61,11 +61,11 @@
             <div class="account-bounding-box">
               <div class="account-name-box">
                 <p class="account-name-box-text">Account Name</p>
-                <p class="account-name-box-details">ADEYEMI TOLULOPE</p>
+                <p class="account-name-box-details">{{ transaction.account_name }}</p>
               </div>
               <div class="account-no-box">
                 <p class="account-no-box-text">Account No</p>
-                <p class="account-no-box-details">0009309000909</p>
+                <p class="account-no-box-details">{{ transaction.account_number }}</p>
               </div>
             </div>
           </div>
@@ -75,22 +75,22 @@
             <div class="amount-box-text">
               <p class="amount-box-text-title">AMOUNT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.amount }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">COMMISSION</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.commission }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">VAT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.vat }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">TOTAL DEBIT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.total_debit }}</p>
             </div>
           </div>
         </div>
@@ -120,11 +120,11 @@
             <div class="account-bounding-box">
               <div class="account-name-box">
                 <p class="account-name-box-text">Account Name</p>
-                <p class="account-name-box-details">ADEYEMI TOLULOPE</p>
+                <p class="account-name-box-details">{{ transaction.account_name }}</p>
               </div>
               <div class="account-no-box">
                 <p class="account-no-box-text">Account No</p>
-                <p class="account-no-box-details">0009309000909</p>
+                <p class="account-no-box-details">{{ transaction.account_number }}</p>
               </div>
             </div>
           </div>
@@ -134,22 +134,22 @@
             <div class="amount-box-text">
               <p class="amount-box-text-title">AMOUNT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.amount }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">COMMISSION</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.commission }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">VAT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.vat }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">TOTAL DEBIT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">123,457.12</p>
+              <p class="amount-text-detail-fill">{{ transaction.total_debit }}</p>
             </div>
           </div>
         </div>
@@ -178,9 +178,9 @@
       <div class="excerpts-flex">
         <p></p>
         <div class="date fill">
-          <p>04</p>
-          <p>APR</p>
-          <p>2020</p>
+          <p>{{ transaction.date.day }}</p>
+          <p>{{ transaction.date.month }}</p>
+          <p>{{ transaction.date.year }}</p>
         </div>
       </div>
     </div>
@@ -225,24 +225,15 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
     </div>
 
     <div class="container-prt">
       <div class="authorized">
         <p>Authorized Signature</p>
         <p class="amount-text-detail">
-          ₦ <span class="amount-text-fill">124,997.33</span>
+          ₦ <span class="amount-text-fill">{{ transaction.total_debit }}</span>
         </p>
       </div>
-=======
-      <div class="signature">
-        <h5>Authorized Signature</h5>
-        <h5>N <span>{{ transaction.total_debit }}</span></h5>
-      </div>
-    
-      <h1>MANAGER'S CHEQUE</h1>
->>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
     </div>
 
     <div class="container-prt">
