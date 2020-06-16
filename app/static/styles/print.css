@@ -36,11 +36,18 @@ body {
   object-fit: contain;
 }
 
+<<<<<<< HEAD
 .copy-excerpt {
   display: flex;
   width: 95%;
   justify-content: flex-end;
   margin-bottom: 10px;
+=======
+.container {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .copy-excerpt-inner {
@@ -48,6 +55,7 @@ body {
   flex-direction: column;
 }
 
+<<<<<<< HEAD
 .copy-excerpt-num {
   padding: 0;
   font-weight: 400;
@@ -55,6 +63,12 @@ body {
   letter-spacing: 2px;
   line-height: 0px;
   text-align: center;
+=======
+.copy h3 {
+  font-size: 15px;
+  padding-left: 15px;
+  line-height: 0.6;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .copy-excerpt-text {
@@ -89,6 +103,7 @@ body {
   word-spacing: 7px;
 }
 
+<<<<<<< HEAD
 .bouding-box-content {
   color: #a81219;
   padding-top: 50px;
@@ -111,6 +126,42 @@ body {
   display: flex;
   align-items: baseline;
   border-bottom: 1px solid #000000;
+=======
+.column2 {
+  display: block;
+  margin-top: 120px;
+  width: 43%;
+}
+
+.price {
+  display: flex;
+  width: 280px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.amounts {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.amount {
+  margin-left: 40px;
+  color: #a81219;
+}
+
+.box1 {
+  height: 170px;
+    border: 3px solid #000;
+}
+
+
+.box1 h2 {
+  color: #a81219;
+  padding-top: 50px;
+  margin-left: 10px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .account-no-box {
@@ -120,12 +171,24 @@ body {
   align-items: baseline;
 }
 
+<<<<<<< HEAD
 .account-name-box-text {
   margin-top: 20px;
+=======
+.fills {
+  font-size: 16px;
+  color: #a81219;
+  margin-left: 5px;
+  font-weight: bolder;
+}
+
+.sub-title, .sub-title2 {
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
   font-size: 14px;
   font-weight: 400;
 }
 
+<<<<<<< HEAD
 .account-name-box-details {
   font-size: 14px;
   color: #a81219;
@@ -149,6 +212,30 @@ body {
   color: #a81219;
   margin-left: 5px;
   font-weight: bolder;
+=======
+.title {
+  font-size: 14px;
+}
+
+.title1 {
+  font-size: 14px;
+  position: absolute;
+  top: 20px;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.copy2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.copy2 h3 {
+  font-size: 15px;
+  line-height: 0.6;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .amount-box {
@@ -164,6 +251,7 @@ body {
   font-weight: 600;
 }
 
+<<<<<<< HEAD
 .amount-box-text-title {
   width: 150px;
 }
@@ -174,6 +262,16 @@ body {
   float: right;
   margin-right: 50px;
 }
+=======
+.left h5 {
+  margin-left: 40px;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 70px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 
 .date-excerpts {
   width: 82%;
@@ -185,6 +283,7 @@ body {
 .excerpts-flex {
   display: flex;
   justify-content: space-between;
+<<<<<<< HEAD
 }
 
 .excerpts-flex p {
@@ -233,6 +332,31 @@ body {
   display: inline;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
+=======
+  margin-bottom: 10px;
+}
+
+.format {
+  color: #a81219;
+  padding-right: 20px;
+}
+
+.name {
+  width: 100%;
+  display: inline-flex;
+  margin-top: 60px;
+  padding-right: 20px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.name h2 {
+  color: #a81219;
+  position: absolute;
+  top: -8px;
+  left: 350px;
+  font-size: 16px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .line {
@@ -241,9 +365,28 @@ body {
   border-bottom: 0.5px solid #000000;
 }
 
+<<<<<<< HEAD
 .text-cont {
   display: block;
   width: 79px;
+=======
+.sum {
+  display: flex;
+  width: 100%;
+  padding-right: 20px;
+  justify-content: flex-end;
+  margin-left: 70px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.sum h2 {
+  color: #a81219;
+  position: absolute;
+  top: -8px;
+  left: 280px;
+  font-size: 16px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .thick {
@@ -277,6 +420,7 @@ body {
   text-align: left;
 }
 
+<<<<<<< HEAD
 .amount-fills p {
   /* padding-top: 5px; */
   color: #a81219;
@@ -284,15 +428,27 @@ body {
   font-size: 18px;
   font-weight: 600;
   text-align: left;
+=======
+.lines {
+  border-bottom: 1px solid #000;
+    width: 93%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .authorized {
   display: flex;
+<<<<<<< HEAD
   justify-content: space-between;
   position: relative;
   height: 30px;
   margin-left: 30px;
   width: 86%;
+=======
+  width: 100%;
+  justify-content: space-evenly;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .authorized p {
@@ -302,11 +458,21 @@ body {
   color: #a81219;
 }
 
+<<<<<<< HEAD
 .managers {
   display: flex;
   position: relative;
   height: 30px;
   width: 86%;
+=======
+.signature span {
+  color: #a81219;
+  font-size: 16px;
+}
+
+h1 {
+  margin: 70px 0 20px 180px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 }
 
 .managers h3 {
@@ -316,11 +482,26 @@ body {
   margin-left: 30px;
 }
 
+<<<<<<< HEAD
 .container-prt {
   width: 48%;
   display: block;
   margin: auto;
 }
+=======
+
+  .box2 {
+    display: flex;
+    position: relative;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 60px;
+      width: 90%;
+      margin-bottom: 40px;
+      border: 3px solid #000;
+      margin-top: 10px;
+  }
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
 
 .cred-fill {
   height: 270px;
@@ -367,7 +548,37 @@ a {
   .text-cont {
     width: 82px;
   }
+<<<<<<< HEAD
   .container-prt {
     width: 64%;
+=======
+  .name h2 {
+    left: 180px;
+    font-size: 12px;
+    top: -5px;
+  }
+
+  .sum h2 {
+    left: 170px;
+    font-size: 12px;
+    top: -5px;
+  }
+
+  .sum {
+    margin-left: 10px;
+  }
+
+  .fills {
+    font-size: 13px;
+  }
+
+  .title, .title1 {
+    font-size: 12px;
+  }
+
+  .box1 h2 {
+    padding-top: 40px;
+    margin-left: 10px;
+>>>>>>> 0fef415a4586c0f559a331fbacc1cb7664fc64db
   }
 }

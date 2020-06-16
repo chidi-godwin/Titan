@@ -1,77 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../static/styles/token.css">
-        <script
-      src="https://kit.fontawesome.com/ebc2490d80.js"
-      crossorigin="anonymous"
-    ></script>
-    </head>
-    <body>
-        <div class="page-container">
-            <div class="content-wrap">
-              <nav>
-                <div style="width: 100px;"></div>
-                <div class="dropdown" style="float: right;">
-                  <span class="username"
-                    ><i class="fa fa-user user-icon"></i> {{ current_user.first_name }} {{ current_user.last_name }}<i
-                      class="fa fa-caret-down user-icon"
-                    ></i
-                  ></span>
-                  <div class="dropdown-content">
-                    <a class="nav-link" href="{{ url_for('profile') }}"
-                      ><i class="fa fa-user user-icon"></i>Profile
-                    </a>
-                    <a class="nav-link" href="{{ url_for('logout') }}"
-                      ><i class="fa fa-sign-out user-icon"></i>Logout</a
-                    >
-                  </div>
-                </div>
-              </nav>
-      
-              <div class="d-flex space-between">
-                <div  style="width: 100px; height: 100px; margin: 20px;">
-                    <a href="{{ url_for('welcome') }}" >
-                        <i class="fas fa-chevron-left"></i> &nbsp; Back
-                    </a>
-                </div>
-                <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
-              </div>
-      
-              <div class="text-cont">
-              </div>
-              <div class="container">
-                <div class="card1">
-                    <div class="input">
-                        <input
-                          type="text"
-                          name="token"
-                          id="token"
-                          placeholder="Token"
-                        />
-                        
-                      </div>
 
-                      <div class="input">
-                        <input
-                          type="text"
-                          name="mc_unique_id"
-                          id="mc_unique_id"
-                          placeholder="MC Unique ID"
-                        />
-                        
-                      </div>
-                  <a href="{{ url_for('printer') }}" class="next-btn">Next</a>
-                </div>
-              </div>
-            </div>
-      
-            <footer class="footer">
-              <p class="footer-p">Powered By Compucode</p>
-            </footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/styles/token.css">
+  <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <nav>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+          <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }}
+            {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
+          <div class="dropdown-content">
+            <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
+            </a>
+            <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
           </div>
-        </body>
-    </body>
-</html> 
+        </div>
+      </nav>
+
+      <div class="d-flex space-between">
+        <div style="width: 100px; height: 100px; margin: 20px;">
+          <a href="{{ url_for('welcome') }}">
+            <i class="fas fa-chevron-left"></i> &nbsp; Back
+          </a>
+        </div>
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
+      </div>
+
+      <div class="text-cont">
+      </div>
+      <form method="POST">
+      <div class="container">
+          <div class="card1">
+            <div class="input">
+              <input type="text" name="token" id="token" placeholder="Token" />
+
+            </div>
+
+            <div class="input">
+              <input type="text" name="mc_unique_id" id="mc_unique_id" placeholder="MC Unique ID" />
+
+            </div>
+            {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+            {% for message in messages %}
+            <span style="color: red; font-size: 12px; text-align: center;">{{ message }}</span><br>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <button>Next</button>
+          </div>
+
+      </div>
+    </form>
+    </div>
+
+    <footer class="footer">
+      <p class="footer-p">Powered By Compucode</p>
+    </footer>
+  </div>
+</body>
+</body>
+
+</html>
