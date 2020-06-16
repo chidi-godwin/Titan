@@ -1,134 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/newprint.css" />
+    <script
+      src="https://kit.fontawesome.com/ebc2490d80.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/styles/print.css?version=1">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="styl esheet"
+    />
 
-  <title>MC-PRINT | Print-file</title>
-</head>
+    <title>MC-PRINT | Print-file</title>
+  </head>
+  <body>
 
-<body>
-  <nav>
-    <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
-    <button class="print-btn">Print Page</button>
-  </nav>
-  <div class="container">
-    <div class="copy">
-      <h5>000000000025</h5>
-      <h3>FILE COPY</h3>
-    </div>
-    <div class="row1">
-      <div class="column1">
-        <div class="box1">
-          <h3>DETAILS</h3>
-        </div>
-        <p class="sub-title">In accordance with your instructions, 
-          we have debited your <br> account for the issuance of Bank Cheque
-        </p>
-        <div class="box2">
-          <span class="title1">Bolatito Qudus</span><hr>
-          <span class="title">097879979</span>
-        </div>
+    <div class="d-flex">
+      <div style="width: 100px; height: auto; margin-left: 40px; margin-top: 10px;">
+        <a href=""> <i class="fas fa-chevron-left"></i> &nbsp; Back </a>
       </div>
-      <div class="column2">
-        <span class="price">
-          <h4>AMOUNT</h4>
-          <h4>N</h4>
-        </span>
-        <span class="price">
-          <h4>COMMISSION</h4>
-          <h4>N</h4>
-        </span>
-        <span class="price">
-          <h4>VAT</h4>
-          <h4>N</h4>
-        </span>
-        <span class="price">
-          <h4>TOTAL DEBIT</h4>
-          <h4>N</h4>
-        </span>
+      <div style="width: 100px; height: auto;"></div>
+    </div>
+
+    <nav class="prt-nav">
+      <div class="prt-nav-flex">
+        <img src="logos/titan-logo.png" class="logo" alt="logo" />
+        <button class="print-btn">Print Page</button>
+      </div>
+    </nav>
+
+    <div class="copy-excerpt">
+      <div class="copy-excerpt-inner">
+        <p class="copy-excerpt-num">00000000025</p>
+        <p class="copy-excerpt-text">file copy</p>
       </div>
     </div>
-    <div class="row2">
-     
-      <div class="column1">
-        <div class="copy2">
-          <h5>00000000025</h5>
-          <h3>ADVICE COPY</h3>
+
+    <div class="containert">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="details-cont">
+            <div class="bounding-box">
+              <h3 class="bouding-box-title">Details</h3>
+              <p class="bouding-box-content">FRI CARGO LIMITED</p>
+            </div>
+            <p class="bounding-box-excerpt">
+              In accordance with your instructions, we have debited your account
+              for the issuance of Bank Cheque
+            </p>
+
+            <div class="account-bounding-box">
+              <div class="account-name-box">
+                <p class="account-name-box-text">Account Name</p>
+                <p class="account-name-box-details">ADEYEMI TOLULOPE</p>
+              </div>
+              <div class="account-no-box">
+                <p class="account-no-box-text">Account No</p>
+                <p class="account-no-box-details">0009309000909</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="box1">
-          <h3>DETAILS</h3>
-        </div>
-        <p class="sub-title2">In accordance with your instructions, 
-          we have debited your <br> account for the issuance of Bank Cheque
-        </p>
-        <div class="box2">
-          <span class="title1">Acount Name</span><hr>
-          <span class="title">Account No.</span>
-        </div>
-      </div>
-      <div class="column2">
-        <span class="price">
-          <h4>AMOUNT</h4>
-          <h4>N</h4>
-        </span>
-        <span class="price">
-          <h4>COMMISSION</h4>
-          <h4>N</h4>
-        </span>
-        <span class="price">
-          <h4>VAT</h4>
-          <h4>N</h4>
-        </span>
-        <span class="price">
-          <h4>TOTAL DEBIT</h4>
-          <h4>N</h4>
-        </span>
-      </div>
-    </div>
-  </div>
-    <div class="row3">
-      <div class="left">
-        <h5>0000000000025</h5>
-        <div class="right">
-          <h5>000000000025</h5>
-          <div class="date">
-            <h6>Day</h6>
-            <h6>Month</h6>
-            <h6>Year</h6>
+        <div class="col-md-6">
+          <div class="amount-box">
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">AMOUNT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">COMMISSION</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">VAT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">TOTAL DEBIT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="name">
-        <h5>Name</h5>
-        <div class="line"></div>
-        <h5>Or Order</h5>
-      </div>
-      <div class="sum">
-        <h5>the sum of</h5>
-        <div class="line-stack">
-          <div class="lines"></div>
-        <div class="lines"></div>
-        <div class="lines"></div>
-        </div>
-        
-        
-      </div>
-      <div class="signature">
-        <h5>Authorized Signature</h5>
-        <h5>N</h5>
-      </div>
-      
-      
-    <h1>MANAGER'S CHEQUE</h1>
-     
     </div>
-  
-    
-  
-</body>
 
+    <div class="copy-excerpt">
+      <div class="copy-excerpt-inner">
+        <p class="copy-excerpt-num">000000025</p>
+        <p class="copy-excerpt-text">advice copy</p>
+      </div>
+    </div>
+
+    <div class="containert">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="details-cont">
+            <div class="bounding-box">
+              <h3 class="bouding-box-title">Details</h3>
+              <p class="bouding-box-content">FRI CARGO LIMITED</p>
+            </div>
+            <p class="bounding-box-excerpt">
+              In accordance with your instructions, we have debited your account
+              for the issuance of Bank Cheque
+            </p>
+
+            <div class="account-bounding-box">
+              <div class="account-name-box">
+                <p class="account-name-box-text">Account Name</p>
+                <p class="account-name-box-details">ADEYEMI TOLULOPE</p>
+              </div>
+              <div class="account-no-box">
+                <p class="account-no-box-text">Account No</p>
+                <p class="account-no-box-details">0009309000909</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="amount-box">
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">AMOUNT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">COMMISSION</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">VAT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">TOTAL DEBIT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">123,457.12</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="num-excerpts">
+      <div class="excerpts-flex">
+        <p>0000000025</p>
+        <p>0000000025</p>
+      </div>
+    </div>
+
+    <div class="date-excerpts">
+      <div class="excerpts-flex">
+        <p></p>
+        <div class="date">
+          <p>Day</p>
+          <p>Month</p>
+          <p>Year</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="date-excerpts">
+      <div class="excerpts-flex">
+        <p></p>
+        <div class="date fill">
+          <p>04</p>
+          <p>APR</p>
+          <p>2020</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cred-fill">
+      <div class="credentials">
+        <div class="line-template">
+          <div class="d-flex">
+            <p class="line-title name">Name</p>
+
+            <div class="line"></div>
+            <div class="text-cont">
+              <p class="line-title">Or Order</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="text-cont">
+              <p class="line-title">the sum of</p>
+            </div>
+            <div class="line thick"></div>
+          </div>
+          <div class="d-flex">
+            <div class="text-cont"></div>
+            <div class="line"></div>
+          </div>
+          <div class="d-flex">
+            <div class="text-cont"></div>
+            <div class="line thick"></div>
+          </div>
+        </div>
+
+        <div class="credentials-content">
+          <div class="name-fills">
+            <p>FRI CARGOS LIMITED</p>
+          </div>
+          <div class="amount-fills">
+            <p>
+              ONE HUNDRED AND TWENTY-THREE THOUSAND NINE HUNDRED AND
+              EIGHTY-THREE NAIRA TWELVE KOBO ONLY ONE HUNDRED AND TWENTY-THREE
+              THOUSAND NINE HUNDRED 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-prt">
+      <div class="authorized">
+        <p>Authorized Signature</p>
+        <p class="amount-text-detail">
+          ₦ <span class="amount-text-fill">124,997.33</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="container-prt">
+      <div class="managers">
+        <h3>MANAGER'S CHEQUE</h3>
+      </div>
+    </div>
+  </body>
 </html>

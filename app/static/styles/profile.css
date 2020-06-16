@@ -94,10 +94,9 @@ nav {
 
 
 .logo {
-  width: 120px;
-  height: 120px;
+  height: 170px;
+  padding: 20px;
   object-fit: contain;
-  margin: 10px 80px;
 }
 
 .save-profile {
@@ -204,7 +203,7 @@ select {
 
 .footer-p {
   text-align: right;
-    color: #000;
+    color: #7a7878;
     margin-right: 20px;
 }
 
