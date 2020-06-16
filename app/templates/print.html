@@ -75,7 +75,8 @@
             <div class="amount-box-text">
               <p class="amount-box-text-title">AMOUNT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.amount }}</p>
+              {% set amount = "{0:.2f}".format(transaction.amount) %}
+              <p class="amount-text-detail-fill">{{ amount }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">COMMISSION</p>
@@ -134,7 +135,7 @@
             <div class="amount-box-text">
               <p class="amount-box-text-title">AMOUNT</p>
               <p class="amount-text-detail">₦</p>
-              <p class="amount-text-detail-fill">{{ transaction.amount }}</p>
+              <p class="amount-text-detail-fill">{{ amount }}</p>
             </div>
             <div class="amount-box-text">
               <p class="amount-box-text-title">COMMISSION</p>
