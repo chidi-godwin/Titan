@@ -4,6 +4,7 @@ from app.models import User, Transaction, Role
 from flask import render_template, redirect, url_for, request, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
+import inflect
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -82,8 +83,10 @@ def token():
     print(unique_id)
     if unique_id is not None:
         transaction = Transaction.query.filter_by(ref_id=unique_id).first()
+        words = inflect.engine()
+        amount_in_words = words.number_to_words(transaction.amount)
         if transaction:
-            return render_template('print.html', transaction=transaction)
+            return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words)
         else:
             flash('Invalid token or ID')
     return render_template('token.html')
