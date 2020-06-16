@@ -37,11 +37,10 @@ nav {
 }
 
 .logo {
-  height: 150px;
+  height: 170px;
   padding: 20px;
   object-fit: contain;
 }
-
 input {
   background-color: none;
   border: none;
@@ -126,7 +125,7 @@ img {
 
 .footer-p {
   text-align: right;
-    color: #000;
+    color: #7a7878;
     margin-right: 20px;
 }
 

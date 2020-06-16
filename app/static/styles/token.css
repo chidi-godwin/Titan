@@ -104,12 +104,10 @@ nav {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
+    height: 170px;
+    padding: 20px;
     object-fit: contain;
-    margin: 10px 80px;
 }
-
 .page-container {
     position: relative;
     min-height: 100vh;
@@ -121,7 +119,7 @@ nav {
 
 .footer-p {
     text-align: right;
-    color: #000;
+    color: #7a7878;
     margin-right: 20px;
 }
 
@@ -192,11 +190,19 @@ a {
 .next-btn {
     background-color: #fc4e2b;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
     text-decoration: none;
+    border: none;
     margin-top: 20px;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    background-color: transparent;
+    color: #fc4e2b;
+    border: 1px solid #fc4e2b;
 }
 
 

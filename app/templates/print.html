@@ -1,159 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/print.css?version=1" />
+    <script
+      src="https://kit.fontawesome.com/ebc2490d80.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/styles/print.css?version=1">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="styl esheet"
+    />
 
-  <title>MC-PRINT | Print-file</title>
-</head>
+    <title>MC-PRINT | Print</title>
+  </head>
+  <body>
 
-<body>
-  <nav>
-    <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
-    <button class="print-btn">Print Page</button>
-  </nav>
-  <div class="container">
-    <div class="copy">
-      <h5>000000000000025</h5>
-      <h3>FILE COPY</h3>
+    <div class="d-flex">
+      <div style="width: 100px; height: auto; margin-left: 40px; margin-top: 10px;">
+        <a href=""> <i class="fas fa-chevron-left"></i> &nbsp; Back </a>
+      </div>
+      <div style="width: 100px; height: auto;"></div>
     </div>
-    <div class="row1">
-      <div class="column1">
-        <div class="box1">
-          <h3>DETAILS</h3>
-          <h2>FRI CARGO LIMITED</h2>
+
+    <nav class="prt-nav">
+      <div class="prt-nav-flex">
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
+        <button class="print-btn">Print Page</button>
+      </div>
+    </nav>
+
+    <div class="copy-excerpt">
+      <div class="copy-excerpt-inner">
+        <p class="copy-excerpt-num">00000000025</p>
+        <p class="copy-excerpt-text">file copy</p>
+      </div>
+    </div>
+
+    <div class="containert">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="details-cont">
+            <div class="bounding-box">
+              <h3 class="bouding-box-title">Details</h3>
+              <p class="bouding-box-content">FRI CARGO LIMITED</p>
+            </div>
+            <p class="bounding-box-excerpt">
+              In accordance with your instructions, we have debited your account
+              for the issuance of Bank Cheque
+            </p>
+
+            <div class="account-bounding-box">
+              <div class="account-name-box">
+                <p class="account-name-box-text">Account Name</p>
+                <p class="account-name-box-details">{{ transaction.account_name }}</p>
+              </div>
+              <div class="account-no-box">
+                <p class="account-no-box-text">Account No</p>
+                <p class="account-no-box-details">{{ transaction.account_number }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="sub-title">In accordance with your instructions, 
-          we have debited your <br> account for the issuance of Bank Cheque
+        <div class="col-md-6">
+          <div class="amount-box">
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">AMOUNT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.amount }}</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">COMMISSION</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.commission }}</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">VAT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.vat }}</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">TOTAL DEBIT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.total_debit }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copy-excerpt">
+      <div class="copy-excerpt-inner">
+        <p class="copy-excerpt-num">000000025</p>
+        <p class="copy-excerpt-text">advice copy</p>
+      </div>
+    </div>
+
+    <div class="containert">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="details-cont">
+            <div class="bounding-box">
+              <h3 class="bouding-box-title">Details</h3>
+              <p class="bouding-box-content">FRI CARGO LIMITED</p>
+            </div>
+            <p class="bounding-box-excerpt">
+              In accordance with your instructions, we have debited your account
+              for the issuance of Bank Cheque
+            </p>
+
+            <div class="account-bounding-box">
+              <div class="account-name-box">
+                <p class="account-name-box-text">Account Name</p>
+                <p class="account-name-box-details">{{ transaction.account_name }}</p>
+              </div>
+              <div class="account-no-box">
+                <p class="account-no-box-text">Account No</p>
+                <p class="account-no-box-details">{{ transaction.account_number }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="amount-box">
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">AMOUNT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.amount }}</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">COMMISSION</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.commission }}</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">VAT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.vat }}</p>
+            </div>
+            <div class="amount-box-text">
+              <p class="amount-box-text-title">TOTAL DEBIT</p>
+              <p class="amount-text-detail">₦</p>
+              <p class="amount-text-detail-fill">{{ transaction.total_debit }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="num-excerpts">
+      <div class="excerpts-flex">
+        <p>0000000025</p>
+        <p>0000000025</p>
+      </div>
+    </div>
+
+    <div class="date-excerpts">
+      <div class="excerpts-flex">
+        <p></p>
+        <div class="date">
+          <p>Day</p>
+          <p>Month</p>
+          <p>Year</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="date-excerpts">
+      <div class="excerpts-flex">
+        <p></p>
+        <div class="date fill">
+          <p>{{ transaction.date.day }}</p>
+          <p>{{ transaction.date.month }}</p>
+          <p>{{ transaction.date.year }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cred-fill">
+      <div class="credentials">
+        <div class="line-template">
+          <div class="d-flex">
+            <p class="line-title name">Name</p>
+
+            <div class="line"></div>
+            <div class="text-cont">
+              <p class="line-title">Or Order</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="text-cont">
+              <p class="line-title">the sum of</p>
+            </div>
+            <div class="line thick"></div>
+          </div>
+          <div class="d-flex">
+            <div class="text-cont"></div>
+            <div class="line"></div>
+          </div>
+          <div class="d-flex">
+            <div class="text-cont"></div>
+            <div class="line thick"></div>
+          </div>
+        </div>
+
+        <div class="credentials-content">
+          <div class="name-fills">
+            <p>FRI CARGOS LIMITED</p>
+          </div>
+          <div class="amount-fills">
+            <p>
+              ONE HUNDRED AND TWENTY-THREE THOUSAND NINE HUNDRED AND
+              EIGHTY-THREE NAIRA TWELVE KOBO ONLY ONE HUNDRED AND TWENTY-THREE
+              THOUSAND NINE HUNDRED 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-prt">
+      <div class="authorized">
+        <p>Authorized Signature</p>
+        <p class="amount-text-detail">
+          ₦ <span class="amount-text-fill">{{ transaction.total_debit }}</span>
         </p>
-        <div class="box2">
-          <span class="title1">Acount Name <span class="fills">{{ transaction.account_name }}</span></span><hr>
-          <span class="title">Account No. <span class="fills">{{ transaction.account_number }}</span></span>
-        </div>
-      </div>
-      <div class="column2">
-        <span class="price">
-          <h4>AMOUNT</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.amount }}</span></h4>
-          </div>
-          
-        </span>
-        <span class="price">
-          <h4>COMMISSION</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.commission }}</span></h4>
-          </div>
-        </span>
-        <span class="price">
-          <h4>VAT</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.vat }}</span></h4>
-          </div>
-        </span>
-        <span class="price">
-          <h4>TOTAL DEBIT</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.total_debit }}</span></h4>
-          </div>
-        </span>
       </div>
     </div>
-    <div class="row2">
-     
-      <div class="column1">
-        <div class="copy2">
-          <h5>00000000000025</h5>
-          <h3>ADVICE COPY</h3>
-        </div>
-        <div class="box1">
-          <h3>DETAILS</h3>
-          <h2>FRI CARGO LIMITED</h2>
-        </div>
-        <p class="sub-title2">In accordance with your instructions, 
-          we have debited your <br> account for the issuance of Bank Cheque
-        </p>
-        <div class="box2">
-          <span class="title1">Acount Name <span class="fills">{{ transaction.account_name }}</span></span><hr>
-          <span class="title">Account No. <span class="fills">{{ transaction.account_number }}</span></span>
-        </div>
-      </div>
-      <div class="column2">
-        <span class="price">
-          <h4>AMOUNT</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.amount }}</span></h4>
-          </div>
-          
-        </span>
-        <span class="price">
-          <h4>COMMISSION</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.commission }}</span></h4>
-          </div>
-        </span>
-        <span class="price">
-          <h4>VAT</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.vat }}</span></h4>
-          </div>
-        </span>
-        <span class="price">
-          <h4>TOTAL DEBIT</h4>
-          <div class="amounts">
-            <h4>N <span class="amount">{{ transaction.total_debit }}</span></h4>
-          </div>
-        </span>
-      </div>
-    </div>
-  </div>
-    <div class="row3">
-      <div class="left">
-        <h5>0000000000000025</h5>
-        <div class="right">
-          <h5>000000000000025</h5>
-          <div class="date">
-            <h6>Day</h6>
-            <h6>Month</h6>
-            <h6>Year</h6>
-          </div>
-          <div class="date format">
-            <h6>04</h6>
-            <h6>APR</h6>
-            <h6>2020</h6>
-          </div>
-        </div>
-      </div>
-      <div class="name">
-        <h5>Name</h5>
-        <h2>FRI CARGOS LIMITED</h2>
-        <div class="line"></div>
-        <h5>Or Order</h5>
-      </div>
-      <div class="sum">
-        <h5>the sum of</h5>
-        <h2>ONE HUNDRED AND TWENTY-THREE THOUSAND NINE HUNDRED AND EIGHTY-THREE NAIRA <br> TWELVE KOBO ONLY</h2>
-        <div class="line-stack">
-          <div class="lines"></div>
-        <div class="lines"></div>
-        <div class="lines"></div>
-        </div>
-        
-        
-      </div>
-      <div class="signature">
-        <h5>Authorized Signature</h5>
-        <h5>N <span>{{ transaction.total_debit }}</span></h5>
-      </div>
-    
-      <h1>MANAGER'S CHEQUE</h1>
-    </div>
-  
-    
-  
-</body>
 
+    <div class="container-prt">
+      <div class="managers">
+        <h3>MANAGER'S CHEQUE</h3>
+      </div>
+    </div>
+  </body>
 </html>
