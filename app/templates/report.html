@@ -51,6 +51,7 @@
                 <th>MC Value</th>
                 <th>Status</th>
                 <th>Date</th>
+                <th></th>
               </tr>
             </thead>              
             {% for record in records %}
@@ -60,6 +61,7 @@
                   <td>{{ record.amount }}</td>
                   <td>Printed</td>
                   <td>{{ record.date }}</td>
+                  <td><button class="print-btn">reprint</button></td>
                 </tr>
               </tbody>
             {% endfor %}
