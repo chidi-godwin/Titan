@@ -34,8 +34,7 @@ class DateForm(FlaskForm):
     fromm = DateField('fromm', validators=[DataRequired()])
     to = DateField('to', validators=[DataRequired()])
 
-    def validate_fromm(self, to, fromm):
-        date1 = fromm.datetime.strptime(to, '%Y-%m-%d')
-        date2 = to.datetime.strptime(fromm, '%Y-%m-%d')
-        if date1 > date2:
-            raise ValidationError('Invalid dates selected')
+    def validate(self):
+        if self.fromm.data > self.to.data:
+            return False
+        return True
