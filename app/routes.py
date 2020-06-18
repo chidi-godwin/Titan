@@ -1,6 +1,6 @@
 from app import app, db
 from app.forms import SignupForm, LoginForm, DateForm
-from app.models import User, Transaction, Role
+from app.models import User, Transaction, Role, Manager
 from flask import render_template, redirect, url_for, request, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
@@ -29,6 +29,8 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def signin():
     if current_user.is_authenticated:
+        if current_user.role.role == 'Manager':
+            return redirect(url_for('manager'))
         return redirect(url_for('welcome'))
     form = LoginForm(request.form)
     if form.validate_on_submit():
@@ -40,9 +42,12 @@ def signin():
         login_user(user, remember=False)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
+            print(user.role.role)
             if user.role.role == 'Manager':
                 next_page = url_for('manager')
-            next_page = url_for('welcome')
+            else:
+                next_page = url_for('welcome')
+        print(next_page)
         return redirect(next_page)
     return render_template('signin.html', form=form)
 
@@ -62,15 +67,19 @@ def welcome():
 def printer():
     return render_template('print.html')
 
-@app.route('/records', methods=['GET', 'POST'])
+@app.route('/records/<teller>', methods=['GET', 'POST'])
 @login_required
-def records():
+def records(teller):
+    back = url_parse(request.referrer).path[1:]
     form = DateForm(request.form)
     if form.validate_on_submit():
         records = Transaction.query.filter(Transaction.date.between(form.fromm.data, form.to.data))
         return render_template('report.html', records=records)
-    records = Transaction.query.all()  
-    return render_template('report.html', records=records, form=form)
+    if teller:
+        records=Transaction.query.filter_by(user_id=teller).all()
+    else:
+        records = Transaction.query.all()  
+    return render_template('report.html', records=records, form=form, back=back)
 
 @app.route('/profile')
 @login_required
@@ -110,7 +119,8 @@ def admin():
 @app.route('/manager')
 @login_required
 def manager():
-    return render_template('manager.html')
+    tellers = Manager.query.filter_by(user_id=current_user.id).first().tellers.all()
+    return render_template('manager.html', tellers=tellers)
 
 @app.route('/managerteller')
 @login_required

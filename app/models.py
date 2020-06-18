@@ -72,33 +72,48 @@ class Teller(db.Model):
     manager_id = db.Column(db.Integer, db.ForeignKey('managers.id'))
     user_id = db.Column(db.Integer,  db.ForeignKey('users.id'))
 
+    def __repr__(self):
+        return f"<Teller {self.officer.username}>"
+
 
 class Manager(db.Model):
     __tablename__ = 'managers'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     branch_id = db.Column(db.Integer, db.ForeignKey('branches.id'))
+    tellers = db.relationship('Teller', backref='manager', lazy='dynamic')
+
+    def __repr__(self):
+        return f"<Manager {self.officer.username}>"
 
 class Branch(db.Model):
     __tablename__ = 'branches'
     id = db.Column(db.Integer, primary_key=True)
     branch = db.Column(db.String(255), nullable=False, unique=True)
     region_id = db.Column(db.Integer, db.ForeignKey('regions.id'))
-    db.relationship('Manager', backref='branch', lazy='dynamic')
+    managers = db.relationship('Manager', backref='branch', lazy='dynamic')
 
+    def __repr__(self):
+        return "<Branch {self.branch}>"
 
 class Region(db.Model):
     __tablename__ = 'regions'
     id = db.Column(db.Integer, primary_key=True)
     region = db.Column(db.String(255), nullable=False, unique=True)
-    db.relationship('Branch', backref='region', lazy='dynamic')
+    branches = db.relationship('Branch', backref='region', lazy='dynamic')
     admin_id = db.Column(db.Integer, db.ForeignKey('admins.id'))
+
+    def __repr__(self):
+        return "<Region {self.region}>"
 
 class Admin(db.Model):
     __tablename__='admins'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    db.relationship('Region', backref='admin', lazy='dynamic')
+    regions = db.relationship('Region', backref='admin', lazy='dynamic')
+    
+    def __repr__(self):
+        return "<Region {self.officer.username}>"
 
 @login.user_loader
 def load_user(username):
