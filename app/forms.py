@@ -5,14 +5,18 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateF
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
 from datetime import datetime
 
+
 class SignupForm(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired()])
     last_name = StringField('Last Name', validators=[DataRequired()])
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired(), Email()])
-    confirm_email = StringField('comfirm email', validators=[DataRequired(), Email(), EqualTo('email')])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=8, max=32)])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    confirm_email = StringField('comfirm email', validators=[
+                                DataRequired(), Email(), EqualTo('email')])
+    password = PasswordField('Password', validators=[
+                             DataRequired(), Length(min=8, max=32)])
+    confirm_password = PasswordField('Confirm Password', validators=[
+                                     DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
@@ -24,11 +28,14 @@ class SignupForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('This email address has been used')
+
+
 class LoginForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
 
 class DateForm(FlaskForm):
     fromm = DateField('fromm', validators=[DataRequired()])

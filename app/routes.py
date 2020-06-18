@@ -108,7 +108,6 @@ def admin():
 @app.route('/manager')
 @login_required
 def manager():
-
     return render_template('manager.html')
 
 @app.route('/managerteller')
