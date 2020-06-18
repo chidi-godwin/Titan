@@ -1,140 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../static/styles/superUser.css?version=1" />
-    <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
-    <title>MC PRINT - Dashboard</title>
-  </head>
-  <body>
 
-    <div class="page-container">
-      <div class="content-wrap">
-        <aside>
-          <div class="img">
-            <img src="../static/images/logos/titan-logo.png" alt="">
-          </div>  
-         
-          <div>
-            <h5>Welcome, SuperUser {{ current_user.first_name }}</h5>
-          </div>
-          <div class="links">
-            <a href="{{ url_for('users') }}">Users</a>
-            <a href="{{ url_for('tellers') }}">Tellers</a>
-            <a href="{{ url_for('adminmanagers') }}">Managers</a>
-            <a href="{{ url_for('addadmin') }}">Admins</a>
-            <a href="{{ url_for('welcome') }}">Back</a>
-            <a href="{{ url_for('logout') }}">Sign out</a>
-          </div>
-        </aside>
-        
-        <main>
-          
-          <div class="d-flex space-between">
-            <div class="card">
-              <div class="card-body">
-                <p>{{ users }}</p>
-                <p class="title">Users</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <p>{{ tellers }}</p>
-                <p class="title">Tellers</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <p>{{ managers }}</p>
-                <p class="title">Managers</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                 <p>{{ admins }}</p>
-                 <p class="title">Admins</p>
-              </div>
-            </div>
-          </div>
-    
-      
-            <div class="mt-5">
-              <h4 class="mb-3">Recent Users</h4>
-              <div class="table-responsive">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col">Name</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Created At</th>
-                      <th scope="col"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
-                      <td>john@gmail.com</td>
-                      <td>08/06/2020</td>
-                      <td><i class="fa fa-trash"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
-                      <td>john@gmail.com</td>
-                      <td>08/06/2020</td>
-                      <td><i class="fa fa-trash"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
-                      <td>john@gmail.com</td>
-                      <td>08/06/2020</td>
-                      <td><i class="fa fa-trash"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
-                      <td>john@gmail.com</td>
-                      <td>08/06/2020</td>
-                      <td><i class="fa fa-trash"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
-                      <td>john@gmail.com</td>
-                      <td>08/06/2020</td>
-                      <td><i class="fa fa-trash"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
-                      <td>john@gmail.com</td>
-                      <td>08/06/2020</td>
-                      <td><i class="fa fa-trash"></i></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          
-            <footer class="footer">
-              <p class="footer-p">Powered By Compucode</p>
-            </footer>
-        </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-       
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../static/styles/superUser.css?version=1" />
+  <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
+  <title>MC PRINT - Dashboard</title>
+</head>
+
+<body>
+
+  <div class="page-container">
+    <div class="content-wrap">
+      <aside>
+        <div class="img">
+          <img src="../static/images/logos/titan-logo.png" alt="">
         </div>
-        
-      </div>
-      
 
-      
+        <div>
+          <h5>Welcome, SuperUser {{ current_user.first_name }}</h5>
+        </div>
+        <div class="links">
+          <a href="{{ url_for('users') }}">Users</a>
+          <a href="{{ url_for('tellers') }}">Tellers</a>
+          <a href="{{ url_for('adminmanagers') }}">Managers</a>
+          <a href="{{ url_for('addadmin') }}">Admins</a>
+          <a href="{{ url_for('welcome') }}">Back</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
+        </div>
+      </aside>
+
+      <main>
+
+        <div class="d-flex space-between">
+          <div class="card">
+            <div class="card-body">
+              <p>{{ users }}</p>
+              <p class="title">Users</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p>{{ tellers }}</p>
+              <p class="title">Tellers</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p>{{ managers }}</p>
+              <p class="title">Managers</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p>{{ admins }}</p>
+              <p class="title">Admins</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="mt-5">
+          <h4 class="mb-3">Recent Users</h4>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Created At</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
+                  <td>john@gmail.com</td>
+                  <td>08/06/2020</td>
+                  <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
+                  <td>john@gmail.com</td>
+                  <td>08/06/2020</td>
+                  <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
+                  <td>john@gmail.com</td>
+                  <td>08/06/2020</td>
+                  <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
+                  <td>john@gmail.com</td>
+                  <td>08/06/2020</td>
+                  <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
+                  <td>john@gmail.com</td>
+                  <td>08/06/2020</td>
+                  <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="" style="text-decoration: none;">John Doe</a></th>
+                  <td>john@gmail.com</td>
+                  <td>08/06/2020</td>
+                  <td><i class="fa fa-trash"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <p class="footer-p">Powered By Compucode</p>
+        </footer>
+      </main>
+
+
     </div>
-    
-   
-    
-  </body>
+
+  </div>
+
+
+
+  </div>
+
+
+
+</body>
+
 </html>

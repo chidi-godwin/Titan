@@ -94,7 +94,7 @@ class Branch(db.Model):
     managers = db.relationship('Manager', backref='branch', lazy='dynamic')
 
     def __repr__(self):
-        return "<Branch {self.branch}>"
+        return f"<Branch {self.branch}>"
 
 class Region(db.Model):
     __tablename__ = 'regions'
@@ -104,7 +104,7 @@ class Region(db.Model):
     admin_id = db.Column(db.Integer, db.ForeignKey('admins.id'))
 
     def __repr__(self):
-        return "<Region {self.region}>"
+        return f"<Region {self.region}>"
 
 class Admin(db.Model):
     __tablename__='admins'
@@ -113,7 +113,7 @@ class Admin(db.Model):
     regions = db.relationship('Region', backref='admin', lazy='dynamic')
     
     def __repr__(self):
-        return "<Region {self.officer.username}>"
+        return f"<Admin {self.officer.username}>"
 
 @login.user_loader
 def load_user(username):
