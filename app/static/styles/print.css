@@ -195,9 +195,13 @@ body {
 
 .date {
   margin: 5px 0px 0px 0px;
-  width: 180px;
+  width: 165px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.date p {
+  font-size: 10px;
 }
 
 
@@ -334,9 +338,9 @@ body {
 
 .fill p {
   color: #a81219;
-  margin-top: -5px;
+  margin-top: -15px;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 a {
