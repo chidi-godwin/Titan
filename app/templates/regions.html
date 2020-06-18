@@ -19,10 +19,10 @@
           <h5>Welcome, Admin</h5>
         </div>
         <div class="links">
-          <a href="regions.html">Regions</a>
           <a href="regions.html">Managers</a>
-          <a href="">Branches</a>
-          <a href="../index.html">Sign out</a>
+          <a href="{{ url_for('branches') }}">Branches</a>
+          <a href="{{ url_for('admin') }}">Back</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
       <main>
@@ -61,66 +61,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Region1</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="branch.html" class="add-btn-table">View Region</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Teller
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Region2</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="branch.html" class="add-btn-table">View Region</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Teller
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Region3</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="branch.html" class="add-btn-table">View Region</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Teller
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Region4</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="branch.html" class="add-btn-table">View Region</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Teller
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Region5</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="branch.html" class="add-btn-table">View Region</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Teller
-                  </span>
-                </td>
-              </tr>
+              {% for region in regions %}
+                <tr>
+                  <th scope="row">{{ region.region }} Region</th>
+                  <td>08/06/2020</td>
+                  <td>
+                    <a href="branch.html" class="add-btn-table">View Region</a>
+                  </td>
+                  <td>
+                    <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
+                      Add Manager
+                    </span>
+                  </td>
+                </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

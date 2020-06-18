@@ -189,13 +189,19 @@ def adminmanagers():
 def tellers():
     return render_template('teller.html')
 
-@app.route('/braches')
+@app.route('/branches')
 @login_required
 def branches():
-    return render_template('branch.html')
+    regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
+    branches = []
+    for region in regions:
+        for branch in region.branches.all():
+            branches.append(branch)
+    return render_template('branch.html', branches=branches)
 
 
 @app.route('/regions')
 @login_required
 def regions():
-    return render_template('regions.html')
+    regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
+    return render_template('regions.html', regions=regions)
