@@ -40,6 +40,8 @@ def signin():
         login_user(user, remember=False)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
+            if user.role.role == 'Manager':
+                next_page = url_for('manager')
             next_page = url_for('welcome')
         return redirect(next_page)
     return render_template('signin.html', form=form)

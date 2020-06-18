@@ -13,15 +13,16 @@ class User(UserMixin, db.Model):
     first_name = db.Column(db.String(250), nullable=False)
     last_name = db.Column(db.String(250), nullable=False)
     password_hash = db.Column(db.String(128))
+    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     transactions = db.relationship(
         'Transaction', backref='officer', lazy='dynamic')
-    transactions = db.relationship(
+    managers = db.relationship(
         'Manager', backref='officer', lazy='dynamic')
-    transactions = db.relationship(
+    tellers = db.relationship(
         'Teller', backref='officer', lazy='dynamic')
-    transactions = db.relationship(
+    admins = db.relationship(
         'Admin', backref='officer', lazy='dynamic')
-    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
+    
 
     def __repr__(self):
         return f"<User {self.username}>"
@@ -68,21 +69,21 @@ class Role(db.Model):
 class Teller(db.Model):
     __tablename__='tellers'
     id = db.Column(db.Integer, primary_key=True)
-    db.Column(db.Integer, db.ForeignKey('managers.id'))
-    db.Column(db.Integer,  db.ForeignKey('users.id'))
+    manager_id = db.Column(db.Integer, db.ForeignKey('managers.id'))
+    user_id = db.Column(db.Integer,  db.ForeignKey('users.id'))
 
 
 class Manager(db.Model):
     __tablename__ = 'managers'
     id = db.Column(db.Integer, primary_key=True)
-    db.Column(db.Integer, db.ForeignKey('users.id'))
-    db.Column(db.Integer, db.ForeignKey('branches.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    branch_id = db.Column(db.Integer, db.ForeignKey('branches.id'))
 
 class Branch(db.Model):
     __tablename__ = 'branches'
     id = db.Column(db.Integer, primary_key=True)
     branch = db.Column(db.String(255), nullable=False, unique=True)
-    region = db.Column(db.Integer, db.ForeignKey('regions.id'))
+    region_id = db.Column(db.Integer, db.ForeignKey('regions.id'))
     db.relationship('Manager', backref='branch', lazy='dynamic')
 
 
@@ -91,12 +92,12 @@ class Region(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     region = db.Column(db.String(255), nullable=False, unique=True)
     db.relationship('Branch', backref='region', lazy='dynamic')
-    admin = db.Column(db.Integer, db.ForeignKey('admins.id'))
+    admin_id = db.Column(db.Integer, db.ForeignKey('admins.id'))
 
 class Admin(db.Model):
     __tablename__='admins'
     id = db.Column(db.Integer, primary_key=True)
-    db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     db.relationship('Region', backref='admin', lazy='dynamic')
 
 @login.user_loader
