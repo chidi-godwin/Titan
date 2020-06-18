@@ -205,3 +205,25 @@ def branches():
 def regions():
     regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
     return render_template('regions.html', regions=regions)
+
+
+@app.route('/adminmanager')
+@login_required
+def adminmanager():
+    regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
+    branches = []
+    for region in regions:
+        for branch in region.branches.all():
+            branches.append(branch)
+    managers=[]
+    for branch in branches:
+        for manager in branch.managers.all():
+            managers.append(manager)
+
+    tellers=[]
+    for manager in managers:
+        for teller in manager.tellers.all():
+            tellers.append(teller)
+    print(managers)
+    print(tellers)
+    return render_template('adminmanager.html', managers=managers, tellers=tellers)
