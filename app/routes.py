@@ -75,7 +75,6 @@ def welcome():
 @app.route('/print/<ref_id>')
 @login_required
 def printer(ref_id):
-    back = url_parse(request.referrer).path[1:].split('/')
     transaction = Transaction.query.filter_by(ref_id=ref_id).first()
     if transaction:
         words = inflect.engine()
@@ -91,14 +90,13 @@ def printer(ref_id):
             'commission': f"{transaction.commission:,.2f}",
             'total_debit': f"{transaction.total_debit:,.2f}"
         }
-        return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words, **numbers, back=back)
+        return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words, **numbers)
     return render_template('print.html')
 
 
 @app.route('/records/<teller>', methods=['GET', 'POST'])
 @login_required
 def records(teller):
-    back = url_parse(request.referrer).path[1:]
     form = DateForm(request.form)
     if form.validate_on_submit():
         records = Transaction.query.filter(
@@ -108,7 +106,7 @@ def records(teller):
         records = Transaction.query.filter_by(user_id=teller).all()
     else:
         records = Transaction.query.all()
-    return render_template('report.html', records=records, form=form, back=back)
+    return render_template('report.html', records=records, form=form)
 
 
 @app.route('/profile')
