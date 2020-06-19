@@ -13,6 +13,7 @@ class User(UserMixin, db.Model):
     first_name = db.Column(db.String(250), nullable=False)
     last_name = db.Column(db.String(250), nullable=False)
     password_hash = db.Column(db.String(128))
+    phone = db.Column(db.String(11), unique=True)
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     transactions = db.relationship(
         'Transaction', backref='officer', lazy='dynamic')

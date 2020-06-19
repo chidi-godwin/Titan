@@ -238,5 +238,4 @@ def adminmanager():
     for manager in managers:
         for teller in manager.tellers.all():
             tellers.append(teller)
-    print(branches)
     return render_template('adminmanager.html', managers=managers, tellers=tellers)
