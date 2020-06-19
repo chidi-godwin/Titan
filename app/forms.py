@@ -40,8 +40,3 @@ class LoginForm(FlaskForm):
 class DateForm(FlaskForm):
     fromm = DateField('fromm', validators=[DataRequired()])
     to = DateField('to', validators=[DataRequired()])
-
-    def validate(self):
-        if self.fromm.data > self.to.data:
-            return False
-        return True
