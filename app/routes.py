@@ -72,9 +72,26 @@ def welcome():
     return render_template('welcome.html', role=str(role))
 
 
-@app.route('/print')
+@app.route('/print/<ref_id>')
 @login_required
-def printer():
+def printer(ref_id):
+    back = url_parse(request.referrer).path[1:].split('/')
+    transaction = Transaction.query.filter_by(ref_id=ref_id).first()
+    if transaction:
+        words = inflect.engine()
+        naira, kobo = list(
+            map(int, str(transaction.total_debit).split('.')))
+        naira_in_words = words.number_to_words(naira)
+        kobo_in_words = words.number_to_words(kobo)
+        amount_in_words = (' and ').join(
+            [naira_in_words, kobo_in_words+' kobo'])
+        numbers = {
+            'amount': f"{transaction.amount:,.2f}",
+            'vat': f"{transaction.vat:,.2f}",
+            'commission': f"{transaction.commission:,.2f}",
+            'total_debit': f"{transaction.total_debit:,.2f}"
+        }
+        return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words, **numbers, back=back)
     return render_template('print.html')
 
 
@@ -105,7 +122,6 @@ def profile():
 def token():
     form = request.form
     unique_id = form.get('mc_unique_id')
-    print(unique_id)
     if unique_id is not None:
         transaction = Transaction.query.filter_by(ref_id=unique_id).first()
         if transaction:
@@ -224,6 +240,5 @@ def adminmanager():
     for manager in managers:
         for teller in manager.tellers.all():
             tellers.append(teller)
-    print(managers)
-    print(tellers)
+    print(branches)
     return render_template('adminmanager.html', managers=managers, tellers=tellers)
