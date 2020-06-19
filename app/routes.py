@@ -87,7 +87,7 @@ def records(teller):
         records = Transaction.query.filter(
             Transaction.date.between(form.fromm.data, form.to.data))
         return render_template('report.html', records=records)
-    if teller:
+    if teller != 'all':
         records = Transaction.query.filter_by(user_id=teller).all()
     else:
         records = Transaction.query.all()
