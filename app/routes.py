@@ -225,18 +225,8 @@ def regions():
 @app.route('/adminmanager')
 @login_required
 def adminmanager():
-    regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
-    branches = []
-    for region in regions:
-        for branch in region.branches.all():
-            branches.append(branch)
-    managers=[]
-    for branch in branches:
-        for manager in branch.managers.all():
-            managers.append(manager)
-
-    tellers=[]
-    for manager in managers:
-        for teller in manager.tellers.all():
-            tellers.append(teller)
+    regions = Admin.query.filter_by(user_id=current_user.id).first().regions.all()
+    branches = [b for r in regions for b in r.branches.all() ]
+    managers = [m.managers.first() for m in  branches]
+    tellers = [t for m in managers for t in m.tellers.all() ]
     return render_template('adminmanager.html', managers=managers, tellers=tellers)
