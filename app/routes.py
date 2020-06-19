@@ -52,6 +52,8 @@ def signin():
                 next_page = url_for('manager')
             elif user.role.role == 'Admin':
                 next_page = url_for('admin')
+            elif user.role.role == 'Superuser':
+                next_page 
             else:
                 next_page = url_for('welcome')
         print(next_page)
