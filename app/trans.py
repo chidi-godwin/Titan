@@ -40,7 +40,10 @@ def set_user():
         'email': None, # to be updated to first_name.last_name@gmail.com
     }
     while user_info.get('username') in [user.username for user in User.query.all()] or user_info.get('username') is None:
-        user_info['email']=user_info.get('first_name')+user_info.get('last_name')+'@titan.com'
+        user_info['first_name']=random.choice(names)
+        user_info['last_name'] = random.choice(names)
+        user_info['username'] = user_info.get('first_name')+user_info.get('last_name')
+    user_info['email']=user_info.get('first_name')+user_info.get('last_name')+'@titan.com'
     return user_info
 
 def create_user(role_name):
@@ -48,4 +51,5 @@ def create_user(role_name):
     u.set_password('12345678')
     u.role = Role.query.filter_by(role=role_name).first()
     db.session.add(u)
+
 
