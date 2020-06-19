@@ -47,16 +47,14 @@ def signin():
         login_user(user, remember=False)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
-            print(user.role.role)
             if user.role.role == 'Manager':
                 next_page = url_for('manager')
             elif user.role.role == 'Admin':
                 next_page = url_for('admin')
             elif user.role.role == 'Superuser':
-                next_page 
+                next_page = url_for('dashboard')
             else:
                 next_page = url_for('welcome')
-        print(next_page)
         return redirect(next_page)
     return render_template('signin.html', form=form)
 
