@@ -1,7 +1,7 @@
 from app import app, db
 from app.forms import SignupForm, LoginForm, DateForm
 from app.models import User, Transaction, Role, Manager, Teller, Region, Branch, Admin
-from flask import render_template, redirect, url_for, request, flash, request
+from flask import render_template, redirect, url_for, request, flash, request, session
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 import inflect
@@ -45,6 +45,7 @@ def signin():
             flash("Invalid username or password")
             return redirect(url_for('signin'))
         login_user(user, remember=False)
+        session.permanent = True
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             if user.role.role == 'Manager':
