@@ -50,6 +50,6 @@ def create_user(role_name):
     u = User(**set_user())
     u.set_password('12345678')
     u.role = Role.query.filter_by(role=role_name).first()
-    db.session.add(u)
-
+    return u
+    #db.session.add(u)
 
