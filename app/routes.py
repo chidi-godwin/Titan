@@ -226,7 +226,10 @@ def regions():
 @login_required
 def adminmanager():
     regions = Admin.query.filter_by(user_id=current_user.id).first().regions.all()
+    print(regions)
     branches = [b for r in regions for b in r.branches.all() ]
+    print(branches)
     managers = [m.managers.first() for m in  branches]
-    tellers = [t for m in managers for t in m.tellers.all() ]
-    return render_template('adminmanager.html', managers=managers, tellers=tellers)
+    print(managers)
+    print(managers[0].tellers.all())
+    return render_template('adminmanager.html', managers=managers)
