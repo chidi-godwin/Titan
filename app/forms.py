@@ -38,5 +38,5 @@ class LoginForm(FlaskForm):
 
 
 class DateForm(FlaskForm):
-    fromm = DateField('fromm', validators=[DataRequired()])
-    to = DateField('to', validators=[DataRequired()])
+    fromm = DateField('fromm')
+    to = DateField('to')

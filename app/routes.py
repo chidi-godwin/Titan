@@ -99,7 +99,7 @@ def printer(ref_id):
 @login_required
 def records(teller):
     form = DateForm(request.form)
-    if form.validate_on_submit():
+    if form.fromm.data and form.to.data:
         records = Transaction.query.filter(
             Transaction.date.between(form.fromm.data, form.to.data))
         return render_template('report.html', records=records)

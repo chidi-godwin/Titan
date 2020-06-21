@@ -37,12 +37,13 @@
       <div class="container">
         <form class="mb-5" method="POST">
           <label>From</label>
-          <input type="date" name="fromm" id="fromm"/>
+          <input type="date" name="fromm" id="fromm" />
           <label>To</label>
-          <input type="date" name="to" id="to"/>
-          <button class="submit-btn" type="submit" name="submit", id="submit">Search</button>
+          <input type="date" name="to" id="to" />
+          <button class="submit-btn" type="submit" name="submit" , id="submit">Search</button>
         </form>
         <br>
+        
         <div class="table-responsive">
           <table class="table">
             <thead>
@@ -54,19 +55,19 @@
                 <th>Time</th>
                 <th></th>
               </tr>
-            </thead>              
+            </thead>
             {% for record in records %}
-              {% set amount = "{:,.2f}".format(record.amount) %}
-              <tbody>
-                <tr>
-                  <td>{{ record.ref_id }}</td>
-                  <td>{{ amount }}</td>
-                  <td>Printed</td>
-                  <td>{{ record.date }}</td>
-                  <td>{{ record.time }}</td>
-                  <td><a href="{{ url_for('printer', ref_id=record.ref_id) }}" class="print-btn">view</a></td>
-                </tr>
-              </tbody>
+            {% set amount = "{:,.2f}".format(record.amount) %}
+            <tbody>
+              <tr>
+                <td>{{ record.ref_id }}</td>
+                <td>{{ amount }}</td>
+                <td>Printed</td>
+                <td>{{ record.date }}</td>
+                <td>{{ record.time }}</td>
+                <td><a href="{{ url_for('printer', ref_id=record.ref_id) }}" class="print-btn">view</a></td>
+              </tr>
+            </tbody>
             {% endfor %}
           </table>
         </div>
