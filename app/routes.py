@@ -237,7 +237,8 @@ def adminmanager():
     managers = [m.managers.first() for m in  branches]
     return render_template('adminmanager.html', managers=managers)
 
-@app.route('/viewmanager')
+@app.route('/viewmanager/<manager_id>')
 @login_required
-def viewmanager():
-    return
+def viewmanager(manager_id):
+    manager = Manager.query.filter_by(id=manager_id).first()
+    return render_template('viewmanager.html', manager=manager)

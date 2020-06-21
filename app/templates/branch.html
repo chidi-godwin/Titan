@@ -42,7 +42,7 @@
                 <tr>
                   <th scope="row">{{ branch.branch }} Branch</th>
                   <td>08/06/2020</td>
-                  <td class="view-btn"><a href="{{ url_for('viewmanager', manager=branch.managers.first()) }}">View Manager</a></td>
+                  <td class="view-btn"><a href="{{ url_for('viewmanager', manager_id=branch.managers.first().id) }}">View Manager</a></td>
                 </tr>
               {% endfor %}
               
