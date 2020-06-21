@@ -23,7 +23,7 @@
           <a href="{{ url_for('users') }}">Users</a>
           <a href="{{ url_for('addadmin') }}">Managers</a>
           <a href="{{ url_for('tellers') }}">Tellers</a>
-          <a href="{{ url_for('dashboard') }}">Back</a>
+          <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
@@ -89,8 +89,9 @@
               </tr>
             </thead>
             <tbody>
+              {% for admin in admins %}
               <tr>
-                <th scope="row">Admin1</th>
+                <th scope="row">{{ admin.officer.first_name }} {{ admin.officer.last_name }}</th>
                 <td>08/06/2020</td>
                 <td>
                   <a href="{{ url_for('adminmanagers') }}" class="add-btn-table">View Admin</a>
@@ -102,57 +103,7 @@
                 </td>
                 <td><i class="fa fa-trash"></i></td>
               </tr>
-              <tr>
-                <th scope="row">Admin1</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="{{ url_for('adminmanagers') }}" class="add-btn-table">View Admin</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Manager
-                  </span>
-                </td>
-                <td><i class="fa fa-trash"></i></td>
-              </tr>
-              <tr>
-                <th scope="row">Admin1</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="{{ url_for('adminmanagers') }}" class="add-btn-table">View Admin</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Manager
-                  </span>
-                </td>
-                <td><i class="fa fa-trash"></i></td>
-              </tr>
-              <tr>
-                <th scope="row">Admin1</th>
-                <td>08/06/2020</td>
-                <td><a href="{{ url_for('adminmanagers') }}" class="add-btn-table">View Admin</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Manager
-                  </span>
-                </td>
-                <td><i class="fa fa-trash"></i></td>
-              </tr>
-              <tr>
-                <th scope="row">Admin1</th>
-                <td>08/06/2020</td>
-                <td>
-                  <a href="{{ url_for('adminmanagers') }}" class="add-btn-table">View Admin</a>
-                </td>
-                <td>
-                  <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Manager
-                  </span>
-                </td>
-                <td><i class="fa fa-trash"></i></td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

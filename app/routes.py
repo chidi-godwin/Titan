@@ -174,7 +174,8 @@ def managerteller():
 @app.route('/users')
 @login_required
 def users():
-    return render_template('users.html')
+    users = User.query.all()
+    return render_template('users.html', users=users)
 
 
 @app.route('/dashboard')
@@ -193,19 +194,22 @@ def dashboard():
 @app.route('/addadmin')
 @login_required
 def addadmin():
-    return render_template('addAdmin.html')
+    admins = Admin.query.all()
+    return render_template('addAdmin.html', admins=admins)
 
 
 @app.route('/adminmanagers')
 @login_required
 def adminmanagers():
-    return render_template('adminManagers.html')
+    managers = Manager.query.all()
+    return render_template('adminManagers.html', managers=managers)
 
 
 @app.route('/tellers')
 @login_required
 def tellers():
-    return render_template('teller.html')
+    tellers = Teller.query.all()
+    return render_template('teller.html', tellers=tellers )
 
 @app.route('/branches')
 @login_required

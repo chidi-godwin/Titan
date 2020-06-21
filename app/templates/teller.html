@@ -22,7 +22,8 @@
           <a href="{{ url_for('dashboard') }}">Dashboard</a>
           <a href="{{ url_for('users') }}">Users</a>
           <a href="{{ url_for('adminmanagers') }}">Managers</a>
-          <a href="{{ url_for('dashboard') }}">Back</a>
+          <a href="{{ url_for('addadmin') }}">Admins</a>
+          <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
@@ -38,36 +39,15 @@
               </tr>
             </thead>
             <tbody>
+
+              {% for teller in tellers %}
               <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
+                <th scope="row">{{ teller.officer.first_name }} {{ teller.officer.last_name }}</th>
+                <td>{{ teller.officer.email }}</td>
                 <td>08/06/2020</td>
               </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
+              {% endfor %}
+
             </tbody>
           </table>
         </div>

@@ -22,7 +22,7 @@
           <a href="{{ url_for('dashboard') }}">Dashboard</a>
           <a href="{{ url_for('adminmanagers') }}">Managers</a>
           <a href="{{ url_for('tellers') }}">Tellers</a>
-          <a href="{{ url_for('dashboard') }}">Back</a>
+          <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
@@ -38,36 +38,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>john@gmail.com</td>
-                <td>08/06/2020</td>
-              </tr>
+              
+              {% for user in users %}
+                <tr>
+                  <th scope="row">{{ user.first_name }} {{ user.last_name }}</th>
+                  <td>{{ user.email }}</td>
+                  <td>08/06/2020</td>
+                </tr>
+              {% endfor %}
+
             </tbody>
           </table>
         </div>

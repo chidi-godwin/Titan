@@ -31,16 +31,14 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Add Teller</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Add Branch</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <form>
-                  <input type="text" placeholder="Username">
-                  <input type="email" placeholder="Email">
-                  <input type="password" placeholder="Password">
+                <form method="POST">
+                  <input type="text" placeholder="Branch name">
                 </form>
               </div>
               <div class="modal-footer">
@@ -66,11 +64,11 @@
                   <th scope="row">{{ region.region }} Region</th>
                   <td>08/06/2020</td>
                   <td>
-                    <a href="branch.html" class="add-btn-table">View Region</a>
+                    <a href="{{ url_for('branches') }}" class="add-btn-table">View Region</a>
                   </td>
                   <td>
                     <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                      Add Manager
+                      Add Branch
                     </span>
                   </td>
                 </tr>

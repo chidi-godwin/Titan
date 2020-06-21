@@ -22,7 +22,7 @@
           <a href="{{ url_for('dashboard') }}">Dashboard</a>
           <a href="{{ url_for('users') }}">Users</a>
           <a href="{{ url_for('tellers') }}">Tellers</a>
-          <a href="{{ url_for('dashboard') }}">Back</a>
+          <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
@@ -37,27 +37,12 @@
               </tr>
             </thead>
             <tbody>
+              {% for manager in managers %}
               <tr>
-                <th scope="row">Manager1</th>
+                <th scope="row">{{ manager.officer.first_name }} {{ manager.officer.last_name }}</th>
                 <td>08/06/2020</td>
               </tr>
-              <tr>
-                <th scope="row">Manager2</th>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">Manager3</th>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">Manager4</th>
-                <td>08/06/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">Manager5</th>
-                <td>08/06/2020</td>
-              </tr>
-              
+              {% endfor %}
             </tbody>
           </table>
         </div>
