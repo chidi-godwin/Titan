@@ -146,10 +146,13 @@ def token():
 @app.route('/admin', methods=['GET', 'POST'])
 @login_required
 def admin():
-    tellers = len(Teller.query.all())
-    managers = len(Manager.query.all())
-    branches = len(Branch.query.all())
-    regions = len(Region.query.all())
+    branches_list = Admin.query.filter_by(user_id=current_user.id).first().regions.first().branches.all()
+    managers_list = [branch.managers.first() for branch in branches_list ]
+    tellers_list = [m.tellers.all() for m in managers_list ]
+    tellers = len([ tellers for f in tellers_list for tellers in f ])
+    managers = len(managers_list)
+    branches = len(branches_list)
+    regions = len(Admin.query.filter_by(user_id=current_user.id).first().regions.all())
     return render_template('admindashboard.html', tellers=tellers, 
                             managers=managers, branches=branches, regions=regions)
 
