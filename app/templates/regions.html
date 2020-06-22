@@ -41,14 +41,14 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <form method="POST">
-                <div class="modal-body">
-                  <input type="text" placeholder="Branch name">
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-secondary modal-btn" data-dismiss="modal">Add</button>
-                </div>
-              </form>
+              <div class="modal-body">
+                <form method="POST"></form>
+                <input type="text" placeholder="Branch name">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary modal-btn" data-dismiss="modal">Add</button>
+              </div>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
                 <td>
                   <a href="{{ url_for('branches') }}" class="add-btn-table">View Region</a>
                 </td>
-                <td> 
+                <td>
                   <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
                     Add Branch
                   </span>
