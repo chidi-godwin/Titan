@@ -40,3 +40,7 @@ class LoginForm(FlaskForm):
 class DateForm(FlaskForm):
     fromm = DateField('fromm')
     to = DateField('to')
+
+class BranchForm(FlaskForm):
+    branch = StringField('branch')
+    manager = StringField('manager')

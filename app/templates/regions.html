@@ -41,14 +41,15 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <form method="POST"></form>
-                <input type="text" placeholder="Branch name">
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-secondary modal-btn" data-dismiss="modal">Add</button>
-              </div>
+              <form method="POST">
+                <div class="modal-body">
+                  <input name="branch" id="branch" type="text" placeholder="Branch name">
+                  <input name="manager" id="manager" type="text" placeholder="Manager Name">
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" name="submit" id="submit" class="btn btn-secondary modal-btn">Add</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

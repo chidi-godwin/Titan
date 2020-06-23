@@ -1,5 +1,5 @@
 from app import app, db
-from app.forms import SignupForm, LoginForm, DateForm
+from app.forms import SignupForm, LoginForm, DateForm, BranchForm
 from app.models import User, Transaction, Role, Manager, Teller, Region, Branch, Admin
 from flask import render_template, redirect, url_for, request, flash, request, session
 from flask_login import current_user, login_user, logout_user, login_required
@@ -222,9 +222,11 @@ def branches():
     return render_template('branch.html', branches=branches)
 
 
-@app.route('/regions')
+@app.route('/regions', methods=['GET', 'POST'])
 @login_required
 def regions():
+    form = BranchForm(request.form)
+    print(form.branch.data, form.manager.data)
     regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
     return render_template('regions.html', regions=regions)
 
