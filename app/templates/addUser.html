@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/styles/superUser.css?version=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>MC PRINT - create user</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <aside>
+        <div class="img">
+          <img src="../static/images/logos/titan-logo.png" alt="">
+        </div>
+
+        <div>
+          <h5>Welcome, Admin</h5>
+        </div>
+        <div class="links">
+          <a href="{{ url_for('admin') }}">Dashboard</a>
+          <a href="{{ url_for('adminmanager') }}">Managers</a>
+          <a href="{{ url_for('branches') }}">Branches</a>
+          <a href="{{ url_for('regions') }}">Regions</a>
+          <a href="{{ url_for('create_user') }}">Create user</a>
+          <a href="javascript:history.back()">Back</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
+        </div>
+      </aside>
+      <main>
+        <div class="heading">
+          <h5 style="margin-left: 30px;">Create user,</h5>
+        </div>
+        <div class="form">
+          <form method="POST">
+            <input type="email" name="email" id="email" placeholder="Email Address">
+            <input type="text" name="firstname" id="firstname" placeholder="First Name">
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="text" name="phone" id="phone" placeholder="Phone">
+            <input type="text" name="role" id="role", placeholder="Role">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password">
+            <button type="submit" name="submit" id="submit" class="user-btn">Add User</button>
+          </form>
+        </div>
+       
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

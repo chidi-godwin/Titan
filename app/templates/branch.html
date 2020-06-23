@@ -46,7 +46,9 @@
         <div class="links">
           <a href="{{ url_for('admin') }}">Dashboard</a>
           <a href="{{ url_for('adminmanager') }}">Managers</a>
+          <a href="{{ url_for('branches') }}">Branches</a>
           <a href="{{ url_for('regions') }}">Regions</a>
+          <a href="{{ url_for('create_user') }}">Create user</a>
           <a href="javascript:history.back">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
@@ -72,7 +74,7 @@
                     Manager</a></td>
                 <td>
                   <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-                    Add Teller
+                    Change
                   </span>
                 </td>
               </tr>

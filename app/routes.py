@@ -244,3 +244,8 @@ def adminmanager():
 def viewmanager(manager_id):
     manager = Manager.query.filter_by(id=manager_id).first()
     return render_template('viewmanager.html', manager=manager)
+
+@app.route('/createuser')
+@login_required
+def create_user():
+    return render_template('addUser.html')
