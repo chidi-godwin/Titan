@@ -12,7 +12,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(250), unique=True, nullable=False)
     first_name = db.Column(db.String(250), nullable=False)
     last_name = db.Column(db.String(250), nullable=False)
-    phone = db.Column(db.String(250), unique=True, nullable=False)
+    phone = db.Column(db.String(255), unique=True, nullable=False)
     password_hash = db.Column(db.String(128))
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     transactions = db.relationship(
