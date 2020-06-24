@@ -37,17 +37,37 @@
         </div>
         <div class="form">
           <form action="" method="POST">
+            {{ form.hidden_tag() }}
             <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
             <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
             <input type="email" name="email" id="email" placeholder="Email Address" required>
+
+            {% for error in form.username.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
             <input type="text" name="username" id="username" placeholder="Username" required>
+
+            {% for error in form.phone.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
             <input type="text" name="phone" id="phone" placeholder="Phone" required>
             <label for="role">Role: </label>
             <select id="role" name="role">
               <option value="Teller" selected>Teller</option>
               <option value="Manager">Manager</option>
             </select>
+
+            {% for error in form.password.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
             <input type="password" name="password" id="password" placeholder="Password" required>
+
+            {% for error in form.confirm_password.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
             <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" required>
             <button type="submit" name="submit" id="submit" class="user-btn">Add User</button>
           </form>

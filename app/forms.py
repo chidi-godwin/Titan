@@ -7,14 +7,15 @@ from datetime import datetime
 
 
 class SignupForm(FlaskForm):
-    first_name = StringField('First Name', validators=[DataRequired()])
-    last_name = StringField('Last Name', validators=[DataRequired()])
+    firstname = StringField('First Name', validators=[DataRequired()])
+    lastname = StringField('Last Name', validators=[DataRequired()])
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired(), Email()])
+    phone = StringField('phone', validators=[DataRequired(), Length(min=11)])
     confirm_email = StringField('comfirm email', validators=[
                                 DataRequired(), Email(), EqualTo('email')])
     password = PasswordField('Password', validators=[
-                             DataRequired(), Length(min=8, max=32)])
+                             DataRequired(), Length(min=8)])
     confirm_password = PasswordField('Confirm Password', validators=[
                                      DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
@@ -28,7 +29,10 @@ class SignupForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('This email address has been used')
-
+    def validate_password(self, password):
+        if not all([any(char.isdigit() for char in password.data), any(char.islower()\
+             for char in password.data), any(char.isupper() for char in password.data)]):
+                 raise ValidationError('passwords must contain at least one lowercase, uppercase and digit')
 
 class LoginForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])

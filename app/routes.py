@@ -248,4 +248,6 @@ def viewmanager(manager_id):
 @app.route('/createuser', methods=['GET', 'POST'])
 @login_required
 def create_user():
+    form = SignupForm(request.form)
+    
     return render_template('addUser.html')
