@@ -28,7 +28,7 @@
           <a href="{{ url_for('branches') }}">Branches</a>
           <a href="{{ url_for('regions') }}">Regions</a>
           <a href="{{ url_for('create_user') }}">Create user</a>
-          <a href="javascript:history.back">Back</a>
+          <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
@@ -52,7 +52,7 @@
                 <td class="dropdown">
                   <a onclick="myFunction()" class="dropbtn">View Manager <i class="fa fa-caret-down"></i></a>
                   <div id="myDropdown" class="dropdown-content">
-                    <a href="#">View</a>
+                    <a href="{{ url_for('viewmanager', manager_id=branch.managers.first().id) }}">View</a>
                     <a href="#">Change manager</a>
                     <a href="#">Add manager</a>
                   </div>
