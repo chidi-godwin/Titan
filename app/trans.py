@@ -38,6 +38,7 @@ def set_user():
         'last_name': random.choice(names),
         'username': None, # to e updated to first name
         'email': None, # to be updated to first_name.last_name@gmail.com
+        'phone': '080' + str(set_digits(8))
     }
     while user_info.get('username') in [user.username for user in User.query.all()] or user_info.get('username') is None:
         user_info['first_name']=random.choice(names)

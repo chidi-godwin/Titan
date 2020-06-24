@@ -1,7 +1,7 @@
 from app.models import User
 from flask_wtf import FlaskForm
 from flask import Markup
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateField, SelectField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
 from datetime import datetime
 
@@ -12,6 +12,7 @@ class SignupForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired(), Email()])
     phone = StringField('phone', validators=[DataRequired(), Length(min=11)])
+    role = SelectField('role', choices=[("Teller", "Teller"), ("Manager", "Manager")])
     confirm_email = StringField('comfirm email', validators=[
                                 DataRequired(), Email(), EqualTo('email')])
     password = PasswordField('Password', validators=[
@@ -29,10 +30,15 @@ class SignupForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('This email address has been used')
+
     def validate_password(self, password):
         if not all([any(char.isdigit() for char in password.data), any(char.islower()\
              for char in password.data), any(char.isupper() for char in password.data)]):
                  raise ValidationError('passwords must contain at least one lowercase, uppercase and digit')
+    def validate_phone(self, phone):
+        user = User.query.filter_by(phone=phone.data).first()
+        if user is not None:
+            raise ValidationError("This number had been used")
 
 class LoginForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])

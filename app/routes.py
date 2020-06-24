@@ -249,5 +249,29 @@ def viewmanager(manager_id):
 @login_required
 def create_user():
     form = SignupForm(request.form)
-    
-    return render_template('addUser.html')
+    print(form.data)
+    print(form.validate_on_submit())
+    if form.validate_on_submit():
+            role = Role.query.filter_by(role=form.role.data).first()
+            user = User(username=form.username.data, email=form.email.data, first_name=form.firstname.data,\
+                last_name=form.lastname.data, phone=form.phone.data)
+            user.set_password(form.password.data)
+            user.role = role
+
+            def send_to_position_table(role):
+                if role == 'Teller':
+                    position = Teller()
+                    position.officer = user
+                elif role == "Manager":
+                    position = Manager()
+                    position.officer = user
+                return position
+            
+            db.session.add(user)
+            db.session.add(send_to_position_table(role.role))
+            db.session.commit()
+
+            flash('New user sucessfully created')
+    else:
+        print(form.errors)
+    return render_template('addUser.html', form=form)
