@@ -327,7 +327,7 @@ body {
   display: flex;
   position: relative;
   height: 30px;
-  width: 86%;
+  width: 96%;
 }
 
 .managers h3 {
@@ -391,4 +391,9 @@ a {
   .container-prt {
     width: 64%;
   }
+}
+
+.cheque {
+  float: right;
+  margin-top: 200px;
 }

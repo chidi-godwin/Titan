@@ -21,6 +21,7 @@
         <div class="links">
           <a href="{{ url_for('dashboard') }}">Dashboard</a>
           <a href="{{ url_for('users') }}">Users</a>
+          <a href="{{ url_for('tellers') }}">Tellers</a>
           <a href="{{ url_for('adminmanagers') }}">Managers</a>
           <a href="{{ url_for('addadmin') }}">Admins</a>
           <a href="javascript:history.back()">Back</a>
@@ -35,7 +36,8 @@
               <tr>
                 <th scope="col">User</th>
                 <th scope="col">Email</th>
-                <th scope="col">Created At</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Branch</th>
               </tr>
             </thead>
             <tbody>
@@ -44,7 +46,8 @@
               <tr>
                 <th scope="row">{{ teller.officer.first_name }} {{ teller.officer.last_name }}</th>
                 <td>{{ teller.officer.email }}</td>
-                <td>08/06/2020</td>
+                <td>{{ teller.officer.phone }}</td>
+                <td>{{ teller.manager.branch.branch }}</td>
               </tr>
               {% endfor %}
 

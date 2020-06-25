@@ -36,6 +36,8 @@ def signin():
             return redirect(url_for('manager'))
         elif current_user.role.role == 'Admin':
             return redirect(url_for('admin'))
+        elif current_user.role.role == "Superuser":
+            return redirect(url_for('dashboard'))
         return redirect(url_for('welcome'))
     form = LoginForm(request.form)
     if form.validate_on_submit():

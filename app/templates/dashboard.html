@@ -25,10 +25,12 @@
           <h5>Welcome, SuperUser {{ current_user.first_name }}</h5>
         </div>
         <div class="links">
+          <a href="{{ url_for('dashboard') }}">Dashboard</a>
           <a href="{{ url_for('users') }}">Users</a>
           <a href="{{ url_for('tellers') }}">Tellers</a>
           <a href="{{ url_for('adminmanagers') }}">Managers</a>
           <a href="{{ url_for('addadmin') }}">Admins</a>
+          <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
       </aside>
