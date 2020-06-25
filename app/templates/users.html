@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/styles/superUser.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <title>MC PRINT - Tellers</title>
 </head>
+
 <body>
   <div class="page-container">
     <div class="content-wrap">
       <aside>
         <div class="img">
           <img src="../static/images/logos/titan-logo.png" alt="">
-        </div>  
-       
+        </div>
+
         <div>
           <h5>Welcome, SuperUser {{ current_user.first_name }}</h5>
         </div>
         <div class="links">
           <a href="{{ url_for('dashboard') }}">Dashboard</a>
-          <a href="{{ url_for('adminmanagers') }}">Managers</a>
+          <a href="{{ url_for('users') }}">Users</a>
           <a href="{{ url_for('tellers') }}">Tellers</a>
+          <a href="{{ url_for('adminmanagers') }}">Managers</a>
+          <a href="{{ url_for('addadmin') }}">Admins</a>
           <a href="javascript:history.back()">Back</a>
           <a href="{{ url_for('logout') }}">Sign out</a>
         </div>
@@ -32,19 +37,21 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">User</th>
+                <th scope="col">Full Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Created At</th>
+                <th scope="col">Role</th>
+                <th scope="col">Phone</th>
               </tr>
             </thead>
             <tbody>
-              
+
               {% for user in users %}
-                <tr>
-                  <th scope="row">{{ user.first_name }} {{ user.last_name }}</th>
-                  <td>{{ user.email }}</td>
-                  <td>08/06/2020</td>
-                </tr>
+              <tr>
+                <th scope="row">{{ user.first_name }} {{ user.last_name }}</th>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role.role }}</td>
+                <td>{{ user.phone }}</td>
+              </tr>
               {% endfor %}
 
             </tbody>
@@ -55,4 +62,5 @@
   </div>
 
 </body>
+
 </html>

@@ -343,3 +343,45 @@ h2 {
 .dropdown-content a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+.drop-btn {
+  width: 70%;
+  display: flex;
+  padding: 10px 40px;
+  background-color: rgb(201, 199, 199);
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+}
+
+.drop-btn:hover {
+  background-color: rgb(185, 183, 183);
+}
+
+#tellers {
+  background-color: #eee;
+  width: 70%;
+  cursor: pointer;
+}
+
+#tellers p {
+  padding: 5px 40px;
+}
+
+#tellers p:hover {
+  background-color: rgb(228, 226, 226);
+}
+
+select {
+  width: 100%;
+  margin: 2px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  padding-left: 5px;
+  border: 1px solid #afafaf;
+}
+
+option {
+  color: #bbb8b7;
+}
