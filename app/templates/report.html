@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../static/styles/report.css?version=1">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../static/styles/report.css?version=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
 
   <title>MC PRINT - Reports</title>
@@ -37,10 +37,13 @@
       <div class="container">
         <form class="mb-5" method="POST">
           <label>From</label>
-          <input type="date" name="fromm" id="fromm"/>
+          <input type="date" name="fromm" id="fromm" />
           <label>To</label>
-          <input type="date" name="to" id="to"/>
-          <button class="submit-btn" type="submit" name="submit", id="submit">Search</button>
+          <input type="date" name="to" id="to" />
+          <button class="submit-btn" type="submit" name="submit" , id="submit">Search</button>
+          <input type="text" placeholder="MC unique ID" style="margin-left: 50px;" />
+
+          <button class="submit-btn" type="submit">Search by ID</button>
         </form>
         <br>
         <div class="table-responsive">
@@ -54,19 +57,19 @@
                 <th>Time</th>
                 <th></th>
               </tr>
-            </thead>              
+            </thead>
             {% for record in records %}
-              {% set amount = "{:,.2f}".format(record.amount) %}
-              <tbody>
-                <tr>
-                  <td>{{ record.ref_id }}</td>
-                  <td>{{ amount }}</td>
-                  <td>Printed</td>
-                  <td>{{ record.date }}</td>
-                  <td>{{ record.time }}</td>
-                  <td><a href="{{ url_for('printer', ref_id=record.ref_id) }}" class="print-btn">view</a></td>
-                </tr>
-              </tbody>
+            {% set amount = "{:,.2f}".format(record.amount) %}
+            <tbody>
+              <tr>
+                <td>{{ record.ref_id }}</td>
+                <td>{{ amount }}</td>
+                <td>Printed</td>
+                <td>{{ record.date }}</td>
+                <td>{{ record.time }}</td>
+                <td><a href="{{ url_for('printer', ref_id=record.ref_id) }}" class="print-btn">view</a></td>
+              </tr>
+            </tbody>
             {% endfor %}
           </table>
         </div>
