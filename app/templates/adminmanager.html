@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../static/styles/superUser.css?version=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
+
   <title>Managers</title>
 </head>
 
@@ -32,59 +34,39 @@
         </div>
       </aside>
       <main>
-        {% for manager in managers %}
-          <div class="heading">
-            <h5>Manager {{ manager.officer.first_name }}</h5>
-            <span class="add-btn-table" data-toggle="modal" data-target="#addTeller">
-              Add Teller
-            </span>
-          </div>
+        <div class="heading">
+          <h2 style="margin-bottom: 40px;">Managers</h2>
+        </div>
 
-          <div class="modal fade" id="addTeller" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Add Teller</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <input type="text" placeholder="Username">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Password">
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary modal-btn" data-dismiss="modal">Add</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Teller</th>
-                  <th scope="col">Created At</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for teller in manager.tellers.all() %}
-                <tr>
-                  <th scope="row">Teller {{ teller.officer.first_name }}</th>
-                  <td>08/06/2020</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
+        {% for manager in managers %}
+        <div class="drop-btn" onclick="toggleList()">
+          <h5 class="display-btn">Manager {{ manager.officer.first_name }}</h5>
+          <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        </div>
+
+
+        <div id="tellers">
+          {% for teller in manager.tellers.all() %}
+          <p>Teller {{ teller.officer.first_name }}</p>
+          {% endfor %}
+        </div>
         {% endfor %}
       </main>
     </div>
   </div>
+
+
+
+  <script>
+    function toggleList() {
+      const dropDown = document.getElementById("tellers");
+      if (dropDown.style.display === "none") {
+        dropDown.style.display = "block";
+      } else {
+        dropDown.style.display = "none";
+      }
+    }
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
