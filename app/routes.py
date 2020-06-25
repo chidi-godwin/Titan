@@ -81,7 +81,7 @@ def printer(ref_id):
     transaction = Transaction.query.filter_by(ref_id=ref_id).first()
     if transaction:
         words = inflect.engine()
-        naira, kobo = list(
+        naira, kobo = list( 
             map(int, str(transaction.total_debit).split('.')))
         naira_in_words = words.number_to_words(naira)
         kobo_in_words = words.number_to_words(kobo)
