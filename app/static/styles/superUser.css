@@ -358,17 +358,17 @@ h2 {
   background-color: rgb(185, 183, 183);
 }
 
-#tellers {
+.tellers {
   background-color: #eee;
   width: 70%;
   cursor: pointer;
 }
 
-#tellers p {
+.tellers p {
   padding: 5px 40px;
 }
 
-#tellers p:hover {
+.tellers p:hover {
   background-color: rgb(228, 226, 226);
 }
 
