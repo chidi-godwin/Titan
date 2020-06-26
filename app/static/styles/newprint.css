@@ -391,6 +391,93 @@ a {
   .container-prt {
     width: 64%;
   }
+
+  .bounding-box {
+    border: none;
+  }
+
+  .account-bounding-box {
+    border: none;
+  }
+  .bouding-box-title {
+    opacity: 0;
+  }
+
+  .bounding-box-excerpt {
+    opacity: 0;
+  }
+  .copy-excerpt-inner {
+    opacity: 0;
+  }
+
+  .amount-box-text-title {
+    opacity: 0;
+  }
+  .amount-text-detail {
+    opacity: 0;
+  }
+
+  .line-title .name {
+    opacity: 0;
+  }
+
+  .line-template .line-title {
+    opacity: 0;
+  }
+
+  .line-template .text-cont{
+    opacity: 0;
+  }
+  .managers {
+    opacity: 0;
+  }
+
+  .cheque {
+    opacity: 0;
+  }
+
+  .line {
+    opacity: 0;
+  }
+
+  .account-name-box-text {
+    opacity: 0;
+  }
+
+  .account-name-box {
+    border: none;
+  }
+
+  .num-excerpts {
+    opacity: 0;
+  }
+
+  .date-cont p {
+    opacity: 0;
+  }
+
+  .date-cont .date-fill {
+    opacity: 100;
+  }
+
+  
+  .authorized .auth-text{
+    opacity: 0;
+  }
+  .authorized .nara {
+    opacity: 0;
+  }
+
+  .authorized .amount-text-fill {
+    opacity: 100 !important;
+  }
+
+  .authorized .amount-text-detail {
+    opacity: 100;
+  }
+  .account-no-box-text {
+    opacity: 0;
+  }
 }
 
 .cheque {

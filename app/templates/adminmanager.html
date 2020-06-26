@@ -45,7 +45,7 @@
         </div>
 
 
-        <div id="tellers">
+        <div class="tellers">
           {% for teller in manager.tellers.all() %}
           <p>Teller {{ teller.officer.first_name }}</p>
           {% endfor %}
@@ -59,7 +59,7 @@
 
   <script>
     function toggleList() {
-      const dropDown = document.getElementById("tellers");
+      const dropDown = document.querySelector(".tellers");
       if (dropDown.style.display === "none") {
         dropDown.style.display = "block";
       } else {
