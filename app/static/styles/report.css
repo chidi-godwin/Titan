@@ -173,6 +173,12 @@ p {
   padding-bottom: 2.5rem;    /* Footer height */
 }
 
+.search-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .footer-p {
   text-align: right;
     color: #7a7878;
