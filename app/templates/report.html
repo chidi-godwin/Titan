@@ -35,15 +35,17 @@
       </div>
 
       <div class="container">
-        <form class="mb-5" method="POST">
+        <form action="" class="mb-5" method="POST">
           <label>From</label>
           <input type="date" name="fromm" id="fromm" />
           <label>To</label>
           <input type="date" name="to" id="to" />
           <button class="submit-btn" type="submit" name="submit" , id="submit">Search</button>
-          <input type="text" placeholder="MC unique ID" style="margin-left: 50px;" />
-
-          <button class="submit-btn" type="submit">Search by ID</button>
+        </form>
+        <form action="" class="mb-5" method="POST">
+          {{ form.hidden_tag() }}
+          <input type="text" name="ref_id", id="ref_id" placeholder="MC unique ID" style="margin-left: 50px;" />
+          <button type="submit" class="submit-btn" type="submit">Search by ID</button>
         </form>
         <br>
         <div class="table-responsive">

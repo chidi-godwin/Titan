@@ -1,4 +1,4 @@
-from app.models import User
+from app.models import User, Transaction
 from flask_wtf import FlaskForm
 from flask import Markup
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateField, SelectField
@@ -54,3 +54,11 @@ class DateForm(FlaskForm):
 class BranchForm(FlaskForm):
     branch = StringField('branch')
     manager = StringField('manager')
+
+class IdForm(FlaskForm):
+    ref_id = StringField('ref_id', validators=[DataRequired()])
+
+    def validate_ref_id(self, ref_id):
+        transaction = Transaction.query.filter_by(ref_id=ref_id.data).first()
+        if not transaction:
+            raise ValidationError('ID does not exist')

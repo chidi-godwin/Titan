@@ -1,5 +1,5 @@
 from app import app, db
-from app.forms import SignupForm, LoginForm, DateForm, BranchForm
+from app.forms import SignupForm, LoginForm, DateForm, BranchForm, IdForm
 from app.models import User, Transaction, Role, Manager, Teller, Region, Branch, Admin
 from flask import render_template, redirect, url_for, request, flash, request, session
 from flask_login import current_user, login_user, logout_user, login_required
@@ -100,16 +100,21 @@ def printer(ref_id):
 @app.route('/records/<teller>', methods=['GET', 'POST'])
 @login_required
 def records(teller):
-    form = DateForm(request.form)
-    if form.fromm.data and form.to.data:
+    form_date = DateForm(request.form)
+    form_Id = IdForm(request.form)
+
+    if form_Id.validate_on_submit():
+        records = Transaction.query.filter_by(ref_id=form_Id.ref_id.data).all()
+        return render_template('report.html', records=records, form=form_Id)
+    if form_date.fromm.data and form_date.to.data:
         records = Transaction.query.filter(
-            Transaction.date.between(form.fromm.data, form.to.data))
-        return render_template('report.html', records=records)
+            Transaction.date.between(form_date.fromm.data, form_date.to.data))
+        return render_template('report.html', records=records, form=form_Id)
     if teller != 'all':
         records = Transaction.query.filter_by(user_id=teller).all()
     else:
         records = Transaction.query.all()
-    return render_template('report.html', records=records, form=form)
+    return render_template('report.html', records=records, form=form_Id)
 
 
 @app.route('/profile')
