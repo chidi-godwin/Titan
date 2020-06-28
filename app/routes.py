@@ -233,7 +233,6 @@ def branches():
 @login_required
 def regions():
     form = BranchForm(request.form)
-    print(form.branch.data, form.manager.data)
     regions = Admin.query.filter_by(user_id=User.query.filter_by(username=current_user.username).first().id).first().regions.all()
     return render_template('regions.html', regions=regions)
 
@@ -256,8 +255,6 @@ def viewmanager(manager_id):
 @login_required
 def create_user():
     form = SignupForm(request.form)
-    print(form.data)
-    print(form.validate_on_submit())
     if form.validate_on_submit():
             role = Role.query.filter_by(role=form.role.data).first()
             user = User(username=form.username.data, email=form.email.data, first_name=form.firstname.data,\
@@ -279,6 +276,4 @@ def create_user():
             db.session.commit()
 
             flash('New user sucessfully created')
-    else:
-        print(form.errors)
     return render_template('addUser.html', form=form)
