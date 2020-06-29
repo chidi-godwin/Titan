@@ -1,3 +1,4 @@
+from app import routes
 from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
@@ -10,5 +11,3 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db, compare_type=True)
 login = LoginManager(app)
 login.login_view = 'signin'
-
-from app import routes
