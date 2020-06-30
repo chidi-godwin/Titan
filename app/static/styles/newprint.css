@@ -6,7 +6,7 @@ body {
 }
 
 .printer-box {
-  height: 40px;
+  height: 0px;
   width: 100%;
   display: none;
 }
