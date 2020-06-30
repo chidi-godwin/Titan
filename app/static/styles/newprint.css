@@ -5,6 +5,12 @@ body {
   /* padding: 10px; */
 }
 
+.printer-box {
+  height: 200px;
+  width: 100%;
+  display: none;
+}
+
 .prt-nav {
   width: 90%;
   display: block;
@@ -381,6 +387,10 @@ a {
     display: none;
   }
 
+  .printer-box {
+    display: block;
+  }
+
   .credentials {
     width: 75%;
   }
@@ -390,6 +400,7 @@ a {
   }
   .container-prt {
     width: 64%;
+    margin-right: 20px;
   }
 
   .bounding-box {
@@ -405,10 +416,19 @@ a {
   }
 
   .amount-box {
-    margin-left: 150px;
+    padding-left: 150px;
   }
   .bouding-box-title {
     opacity: 0;
+  }
+
+  .cred-fill {
+    padding-top: 150px;
+  }
+
+  .credentials-content {
+    width: 75%;
+    margin-left: 40px;
   }
 
   .bounding-box-excerpt {
@@ -423,6 +443,27 @@ a {
   }
   .amount-text-detail {
     opacity: 0;
+  }
+
+  .account-name-box-details, .account-no-box-details {
+    padding-left: 20px;
+  }
+
+  .first {
+    padding-top: 25px;
+  }
+
+  .second {
+    padding-top: 60px;
+  }
+
+
+  .print-d {
+    padding-top: 50px;  
+  }
+
+  .account-no-box-details {
+    padding-left: 15px;
   }
 
   .line-title .name {
@@ -468,6 +509,10 @@ a {
     opacity: 100;
   }
 
+
+  .date-excerpts {
+    padding-top: 40px;
+  }
   
   .authorized .auth-text{
     opacity: 0;

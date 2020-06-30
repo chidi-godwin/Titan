@@ -37,7 +37,9 @@
     </div>
   </div>
 
-  <div class="containert contain">
+  <div class="printer-box"></div>
+
+  <div class="containert">
     <div class="row">
       <div class="col-md-6">
         <div class="details-cont">
@@ -63,7 +65,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="amount-box">
+        <div class="amount-box first">
           <div class="amount-box-text">
             <p class="amount-box-text-title">AMOUNT</p>
             <p class="amount-text-detail">₦</p>
@@ -112,17 +114,17 @@
           <div class="account-bounding-box">
             <div class="account-name-box">
               <p class="account-name-box-text">Account Name</p>
-              <p class="account-name-box-details">{{ transaction.account_name }}</p>
+              <p class="account-name-box-details print-d">{{ transaction.account_name }}</p>
             </div>
             <div class="account-no-box">
               <p class="account-no-box-text">Account No</p>
-              <p class="account-no-box-details">{{ transaction.account_number }}</p>
+              <p class="account-no-box-details print-d">{{ transaction.account_number }}</p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="amount-box">
+        <div class="amount-box second">
           <div class="amount-box-text">
             <p class="amount-box-text-title">AMOUNT</p>
             <p class="amount-text-detail">₦</p>
