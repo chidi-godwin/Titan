@@ -399,6 +399,14 @@ a {
   .account-bounding-box {
     border: none;
   }
+
+  .contain {
+    margin-top: 200px;
+  }
+
+  .amount-box {
+    margin-left: 150px;
+  }
   .bouding-box-title {
     opacity: 0;
   }
