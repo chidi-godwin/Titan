@@ -1,123 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../static/styles/report.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../static/styles/report.css?version=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
 
   <title>MC PRINT - Reports</title>
 </head>
+
 <body>
-  <nav>
-    <div style="width: 100px;"></div>
-    <div class="dropdown" style="float: right;">
-        <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }} {{ current_user.last_name }}<i
-                class="fa fa-caret-down user-icon"></i></span>
-        <div class="dropdown-content">
+  <div class="page-container">
+    <div class="content-wrapper">
+      <nav>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+          <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }}
+            {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
+          <div class="dropdown-content">
             <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
             </a>
             <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
+          </div>
         </div>
-    </div>
-</nav>
+      </nav>
 
-<div class="d-flex space-between">
-    <img src="../static/images/logos/compucode-logo.png" class="logo" alt="logo">
-    <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo">
-</div>
-  <div class="container">
-    
-    <label>From</label>
-    <input type="text">
-    <label>To</label>
-    <input type="text">                                                                                     
-  <div class="table-responsive">          
-  <table class="table">
-    <thead>
-      <tr>
-        <th>MC Unique ID</th>
-        <th>MC Value</th>
-        <th>Status</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1913567</td>
-        <td>100,000,000.00</td>
-        <td>Printed</td>
-        <td>13/06/20</td>
-      </tr>
-    </tbody>
-    <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>1913567</td>
-          <td>100,000,000.00</td>
-          <td>Printed</td>
-          <td>13/06/20</td>
-        </tr>
-      </tbody>
-  </table>
-  </div>
-  
-</div>
+      <div class="d-flex space-between">
+        <div style="width: 100px; height: 100px; margin: 20px;">
+          <a href="javascript:history.back()"> <i class="fas fa-chevron-left"></i> &nbsp; Back </a>
+        </div>
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
+      </div>
+
+      <div class="container">
+        <div class="search-area">
+          <form action="" class="mb-5" method="POST">
+          
+            <label>From</label>
+            <input type="date" name="fromm" id="fromm" />
+            <label>To</label>
+            <input type="date" name="to" id="to" />
+            <button class="submit-btn" type="submit" name="submit" , id="submit">Search</button>
+          </form>
+          <form action="" class="mb-5" method="POST">
+            {{ form.hidden_tag() }}
+            <input type="text" name="ref_id" , id="ref_id" placeholder="MC unique ID" style="margin-left: 50px;" />
+            <button type="submit" class="submit-btn" type="submit">Search by ID</button>
+          </form>
+          </div>
+          <br>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>MC Unique ID</th>
+                  <th>MC Value</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th></th>
+                </tr>
+              </thead>
+              {% for record in records %}
+              {% set amount = "{:,.2f}".format(record.amount) %}
+              <tbody>
+                <tr>
+                  <td>{{ record.ref_id }}</td>
+                  <td>{{ amount }}</td>
+                  <td>Printed</td>
+                  <td>{{ record.date }}</td>
+                  <td>{{ record.time }}</td>
+                  <td><a href="{{ url_for('printer', ref_id=record.ref_id) }}" class="print-btn">view</a></td>
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
 </body>
+
 </html>

@@ -1,0 +1,494 @@
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 5px;
+  /* padding: 10px; */
+}
+
+.prt-nav {
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.prt-nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.print-btn {
+  height: 100%;
+  padding: 5px 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #fc4e2b;
+  color: #fff;
+  font-size: 14px;
+}
+
+.logo {
+  height: 150px;
+  object-fit: contain;
+}
+
+.copy-excerpt {
+  display: flex;
+  width: 95%;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.copy-excerpt-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.copy-excerpt-num {
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 0px;
+  text-align: center;
+}
+
+.copy-excerpt-text {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 0px;
+  text-align: center;
+}
+
+.details-cont {
+  height: 400px;
+}
+
+.bounding-box {
+  width: 100%;
+  border: 5px solid #000;
+  height: 150px;
+  padding: 5px;
+}
+
+.bouding-box-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.bounding-box-excerpt {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px 0px 10px 0px;
+  word-spacing: 7px;
+}
+
+.bouding-box-content {
+  color: #a81219;
+  padding-top: 30px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 80%;
+  word-wrap: break-word;
+}
+
+.account-bounding-box {
+  height: 100px;
+  width: 100%;
+
+  width: 90%;
+  border: 5px solid #000;
+}
+
+.account-name-box {
+  padding: 5px;
+  height: 50px;
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid #000000;
+}
+
+.account-no-box {
+  padding: 5px;
+  height: 50px;
+  display: flex;
+  align-items: baseline;
+}
+
+.account-name-box-text {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.account-name-box-details {
+  font-size: 14px;
+  color: #a81219;
+  margin-left: 5px;
+  font-weight: bolder;
+  width: 200px;
+}
+
+.amount-text-detail-fill {
+  color: #a81219;
+  margin-left: 40px;
+}
+
+.account-no-box-text {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.account-no-box-details {
+  font-size: 14px;
+  color: #a81219;
+  margin-left: 5px;
+  font-weight: bolder;
+}
+
+.amount-box {
+  height: 150px;
+  margin-top: 90px;
+}
+
+.amount-box-text {
+  line-height: 10px;
+  padding: 10px 20px 10px 0px;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.amount-box-text-title {
+  width: 150px;
+}
+
+.num-excerpts {
+  width: 93%;
+  display: block;
+  float: right;
+  margin-right: 50px;
+}
+
+.date-excerpts {
+  width: 30%;
+  float: right;
+  margin-right: 30px;
+  
+}
+
+
+.date-boundry {
+  width: 50%;
+  display: flex;
+  float: right;
+  justify-content: space-between;
+}
+
+.excerpts-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.excerpts-flex p {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.date {
+  margin: 5px 0px 0px 0px;
+  width: 170px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.date-cont p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.date-fill {
+  color: #a81219;
+}
+
+
+.credentials {
+  width: 70%;
+  display: block;
+  float: right;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 155px;
+}
+
+.line-template {
+  height: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.d-flex {
+  align-items: baseline;
+}
+
+.name {
+  width: 99px;
+  text-align: right;
+}
+.line-title {
+  font-size: 15px;
+  font-weight: 600;
+  flex-wrap: nowrap;
+  display: inline;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.line {
+  width: 100%;
+  height: 20px;
+  border-bottom: 0.5px solid #000000;
+}
+
+.text-cont {
+  display: block;
+  width: 90px;
+}
+
+.thick {
+  border-bottom: 1px solid #000000 !important;
+}
+
+.credentials-content {
+  width: 80%;
+  display: block;
+  float: right;
+  position: absolute;
+  height: 150px;
+  top: 0px;
+  left: 0px;
+  margin-left: 90px;
+}
+
+.name-fills {
+  height: 25px;
+}
+
+.amount-fills {
+  height: 65px;
+}
+
+.name-fills p {
+  color: #a81219;
+  line-height: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.amount-fills p {
+  /* padding-top: 5px; */
+  color: #a81219;
+  line-height: 47px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.authorized {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 30px;
+  margin-left: 30px;
+  width: 86%;
+}
+
+.authorized p {
+  font-weight: 600;
+}
+.amount-text-fill {
+  color: #a81219;
+}
+
+.managers {
+  display: flex;
+  position: relative;
+  height: 30px;
+  width: 96%;
+}
+
+.managers h3 {
+  padding-top: 40px;
+  font-size: 27px;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+.container-prt {
+  width: 48%;
+  display: block;
+  margin: auto;
+}
+
+.cred-fill {
+  height: 270px;
+}
+
+.containert {
+  width: 85vw !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.fill p {
+  color: #a81219;
+  margin-top: -15px;
+  text-align: center;
+  font-size: 10px;
+}
+
+a {
+  color: #fc4e2b !important;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media print {
+  .logo {
+    display: none;
+  }
+
+  a {
+    display: none;
+  }
+
+  .print-btn {
+    display: none;
+  }
+
+  .credentials {
+    width: 75%;
+  }
+
+  .text-cont {
+    width: 92px;
+  }
+  .container-prt {
+    width: 64%;
+  }
+
+  .bounding-box {
+    border: none;
+  }
+
+  .account-bounding-box {
+    border: none;
+  }
+
+  .contain {
+    margin-top: 200px;
+  }
+
+  .amount-box {
+    margin-left: 150px;
+  }
+  .bouding-box-title {
+    opacity: 0;
+  }
+
+  .bounding-box-excerpt {
+    opacity: 0;
+  }
+  .copy-excerpt-inner {
+    opacity: 0;
+  }
+
+  .amount-box-text-title {
+    opacity: 0;
+  }
+  .amount-text-detail {
+    opacity: 0;
+  }
+
+  .line-title .name {
+    opacity: 0;
+  }
+
+  .line-template .line-title {
+    opacity: 0;
+  }
+
+  .line-template .text-cont{
+    opacity: 0;
+  }
+  .managers {
+    opacity: 0;
+  }
+
+  .cheque {
+    opacity: 0;
+  }
+
+  .line {
+    opacity: 0;
+  }
+
+  .account-name-box-text {
+    opacity: 0;
+  }
+
+  .account-name-box {
+    border: none;
+  }
+
+  .num-excerpts {
+    opacity: 0;
+  }
+
+  .date-cont p {
+    opacity: 0;
+  }
+
+  .date-cont .date-fill {
+    opacity: 100;
+  }
+
+  
+  .authorized .auth-text{
+    opacity: 0;
+  }
+  .authorized .nara {
+    opacity: 0;
+  }
+
+  .authorized .amount-text-fill {
+    opacity: 100 !important;
+  }
+
+  .authorized .amount-text-detail {
+    opacity: 100;
+  }
+  .account-no-box-text {
+    opacity: 0;
+  }
+}
+
+.cheque {
+  float: right;
+  margin-top: 200px;
+}

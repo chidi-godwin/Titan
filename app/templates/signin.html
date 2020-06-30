@@ -4,64 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/index.css">
+    <link rel="stylesheet" href="../static/styles/index.css?version=1">
     <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>MC PRINT - login</title>
 </head>
 
 <body>
-    <nav>
-        <div style="width: 100px; height: 100px"></div>
-        <img src="static/images/logos/titan-logo.png" class="logo" alt="logo">
-    </nav>
 
-    <div class="signup">
-        <form action="" method="post">
-            {{ form.hidden_tag() }}
+    <div class="page-container">
+        <div class="content-wrapper">
+            <nav>
+                <div style="width: 100px; height: 100px;"></div>
+                <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
+            </nav>
 
-            <h2>Login</h2>
-            <br>
-            {% for error in form.username.errors %}
-            <span style="color: red; font-size: 12px;">{{ error }}</span>
-            {% endfor %}
-            <div class="input">
-                <i class="fa fa-user icon"></i>
-                <input type="text" name="username" id="username" placeholder="Username or Email">
-            </div>
-            {% for error in form.password.errors %}
-            <span style="color: red; font-size: 12px;">{{ error }}</span>
-            {% endfor %}
-            <div class="input">
-                <i class="fa fa-lock icon"></i>
-                <input type="password" name="password" id="password" placeholder="Password">
-    
-            </div>
+            <div class="signup">
+                <form action="" method="post">
+                    {{ form.hidden_tag() }}
 
-            {% with messages = get_flashed_messages() %}
-        
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                    <li> <span style="color: royalblue; font-size: 14px;">{{ message }}</span> </li>
+                    <h2>Login</h2>
+                    <br />
+                    {% for error in form.username.errors %}
+                    <span style="color: red; font-size: 12px;">{{ error }}</span>
                     {% endfor %}
-                </ul>
-            {% endif %}
-            {% endwith %}
+                    <div class="input">
+                        <i class="fa fa-user icon"></i>
+                        <input type="text" name="username" id="username" placeholder="Username or Email">
+                    </div>
+                    {% for error in form.password.errors %}
+                    <span style="color: red; font-size: 12px;">{{ error }}</span>
+                    {% endfor %}
+                    <div class="input">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" name="password" id="password" placeholder="Password">
 
-            <button type="submit" id="submit" name="submit">Login</button>
-            <button><a href="{{ url_for('signup') }}">Create an Account</a></button>
-            
-            <div class="or-cont">
-                <div class="d-flex">
-                    <div class="line" width="30%"></div>
-                    <h2 class="or">OR</h2>
-                    <div class="line" width="30%"></div>
-                </div>
+                    </div>
+
+                    {% with messages = get_flashed_messages() %}
+
+                    {% if messages %}
+                    {% for message in messages %}
+                    <span style="color: red; font-size: 12px; text-align: center;">{{ message }}</span><br>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
+                    <button type="submit" id="submit" name="submit">Login</button>
+
+                    <div class="or-cont">
+                        <div class="d-flex">
+                            <div class="line" width="30%"></div>
+                            <h2 class="or">OR</h2>
+                            <div class="line" width="30%"></div>
+                        </div>
+                    </div>
+                    <div style="width: 100%;">
+                        <a href="" class="signup-button">
+                            Sign in with Flexcube
+                        </a>
+                    </div>
+                </form>
             </div>
-            <button class="signup-button"><a href="">Sign in with Flexcube</a></button>
-        </form>  
+        </div>
+
     </div>
+    <footer class="footer">
+        <p class="footer-p">Powered By Compucode</p>
+    </footer>
 </body>
 
 </html>

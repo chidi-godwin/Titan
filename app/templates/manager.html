@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../static/styles/manager.css?version=1" />
+  <script src="https://kit.fontawesome.com/ebc2490d80.js" crossorigin="anonymous"></script>
+  <title>MC PRINT - Manager</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <nav>
+        <div style="width: 100px;"></div>
+        <div class="dropdown" style="float: right;">
+          <span class="username"><i class="fa fa-user user-icon"></i> {{ current_user.first_name }}
+            {{ current_user.last_name }}<i class="fa fa-caret-down user-icon"></i></span>
+          <div class="dropdown-content">
+            <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user user-icon"></i>Profile
+            </a>
+            <a class="nav-link" href="{{ url_for('logout') }}"><i class="fa fa-sign-out user-icon"></i>Logout</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="d-flex space-between">
+        <div style="width: 100px; height: 100px; margin: 20px;">
+        </div>
+        <img src="../static/images/logos/titan-logo.png" class="logo" alt="logo" />
+      </div>
+
+
+      <main>
+
+
+        <div class="container">
+          <h5>Welcome, Manager {{ current_user.first_name }}</h5>
+          <p>Tellers</p>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Teller</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Created At</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                {% for teller in tellers %}
+                <tr>
+                  <th scope="row"><a href="{{ url_for('records', teller=teller.officer.id) }}" style="text-decoration: none;">{{ teller.officer.first_name }} {{ teller.officer.last_name }}</a></th>
+                  <td>{{ teller.officer.email }}</td>
+                  <td>08/06/2020</td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+
+
+</body>
+
+</html>

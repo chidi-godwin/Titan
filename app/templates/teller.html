@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/styles/superUser.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>MC PRINT - Tellers</title>
+</head>
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <aside>
+        <div class="img">
+          <img src="../static/images/logos/titan-logo.png" alt="">
+        </div>  
+       
+        <div>
+          <h5>Welcome, SuperUser {{ current_user.first_name }}</h5>
+        </div>
+        <div class="links">
+          <a href="{{ url_for('dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('users') }}">Users</a>
+          <a href="{{ url_for('tellers') }}">Tellers</a>
+          <a href="{{ url_for('adminmanagers') }}">Managers</a>
+          <a href="{{ url_for('addadmin') }}">Admins</a>
+          <a href="javascript:history.back()">Back</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
+        </div>
+      </aside>
+      <main>
+        <h4>Tellers</h4>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">User</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Branch</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for teller in tellers %}
+              <tr>
+                <th scope="row">{{ teller.officer.first_name }} {{ teller.officer.last_name }}</th>
+                <td>{{ teller.officer.email }}</td>
+                <td>{{ teller.officer.phone }}</td>
+                <td>{{ teller.manager.branch.branch }}</td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

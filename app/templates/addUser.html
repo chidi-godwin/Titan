@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/styles/superUser.css?version=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>MC PRINT - create user</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <aside>
+        <div class="img">
+          <img src="../static/images/logos/titan-logo.png" alt="">
+        </div>
+
+        <div>
+          <h5>Welcome, Admin</h5>
+        </div>
+        <div class="links">
+          <a href="{{ url_for('admin') }}">Dashboard</a>
+          <a href="{{ url_for('adminmanager') }}">Managers</a>
+          <a href="{{ url_for('branches') }}">Branches</a>
+          <a href="{{ url_for('regions') }}">Regions</a>
+          <a href="{{ url_for('create_user') }}">Create user</a>
+          <a href="javascript:history.back()">Back</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
+        </div>
+      </aside>
+      <main>
+
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+        {% for message in messages %}
+        <span style="color: red; font-size: 12px; text-align: center;">{{ message }}</span><br>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        
+        <div class="heading">
+          <h5 style="margin-left: 30px;">Create user,</h5>
+        </div>
+        <div class="form">
+          <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+            
+            {% for error in form.email.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+
+            {% for error in form.confirm_email.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
+            <input type="email" name="confirm_email" id="confirm_email" placeholder="Confirm email" required>
+
+            {% for error in form.username.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
+            <input type="text" name="username" id="username" placeholder="Username" required>
+
+            {% for error in form.phone.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
+            <input type="text" name="phone" id="phone" placeholder="Phone" required>
+            <label for="role">Role: </label>
+            <select id="role" name="role">
+              <option value="Teller" selected>Teller</option>
+              <option value="Manager">Manager</option>
+            </select>
+
+            {% for error in form.password.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+
+            <input type="password" name="password" id="password" placeholder="Password" required>
+
+            {% for error in form.confirm_password.errors %}
+            <span style="color: red; font-size: 12px;">{{ error }}</span>
+            {% endfor %}
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" required>
+            <button type="submit" name="submit" id="submit" class="user-btn">Add User</button>
+          </form>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

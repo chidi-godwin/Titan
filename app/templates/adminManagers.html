@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/styles/superUser.css?version=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>MC PRINT - Tellers</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="content-wrap">
+      <aside>
+        <div class="img">
+          <img src="../static/images/logos/titan-logo.png" alt="">
+        </div>
+
+        <div>
+          <h5>Welcome, Super User</h5>
+        </div>
+        <div class="links">
+          <a href="{{ url_for('dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('users') }}">Users</a>
+          <a href="{{ url_for('tellers') }}">Tellers</a>
+          <a href="{{ url_for('adminmanagers') }}">Managers</a>
+          <a href="{{ url_for('addadmin') }}">Admins</a>
+          <a href="javascript:history.back()">Back</a>
+          <a href="{{ url_for('logout') }}">Sign out</a>
+        </div>
+      </aside>
+      <main>
+        <h4>Admin's Manager</h4>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Manager</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Region</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for manager in managers %}
+              <tr>
+                <th scope="row">{{ manager.officer.first_name }} {{ manager.officer.last_name }}</th>
+                <td>{{ manager.officer.email }}</td>
+                <td>{{ manager.officer.phone }}</td>
+                <td>{{ manager.branch.branch }}</td>
+                <td>{{ manager.branch.region.region }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

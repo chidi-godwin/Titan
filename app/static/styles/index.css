@@ -36,7 +36,7 @@ form {
 .line {
     margin-top: 10px;
     margin-bottom: 20px;
-    border-top: 2px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
     height: 10px;
     width: 40%;
 }
@@ -48,7 +48,35 @@ form {
     border: 1px solid #8d8c8c;
     padding: 0.6em;
     display: flex;
+} 
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
 }
+  
+.content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+.footer-p {
+    position: absolute;
+    right: 20px;
+    text-align: right;
+    color: #7a7878;
+}
+
+.footer {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    background-color: #ffffff;
+}
+
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -82,35 +110,85 @@ input {
 button {
     width: 100%;
     padding: 0.6em;
-    background-color: #f06b2e;
+    background-color: #fc4e2b;
     border: none;
     border-radius: 2px;
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
 }
+
+button:hover {
+    border: 2px solid #fc4e2b;
+    color: #fc4e2b !important;
+    background-color: #fff;
+}
+
+button:hover a {
+    color: #fc4e2b;
+}
+
+.btn-create {
+    width: 100%;
+    padding: 0.6em;
+    background-color: #fc4e2b;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none; 
+    font-size: 13px;
+}
+
+
+.btn-create:hover {
+    border: 2px solid #fc4e2b;
+    color: #fc4e2b !important;
+    background-color: #fff;
+}
+
 
 .signup-button {
     width: 100%;
     padding: 0.6em;
-    background-color: #302b95;
+    background-color: #253f66;
     border: none;
     border-radius: 2px;
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
+    text-decoration: none; 
+    display: block;
+    font-size: 13px;
+    text-align: center;
+}
+
+.signup-button:hover {
+    width: 100%;
+    padding: 0.6em;
+    background-color: #fff;
+    border: 2px solid #253f66;
+    border-radius: 2px;
+    color: #253f66;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.signup-button:hover a {
+    color: #253f66;
 }
 
 .or-cont {
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
     width: 100%;
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
-}
+
 
 
 @media (min-width: 1024px) {

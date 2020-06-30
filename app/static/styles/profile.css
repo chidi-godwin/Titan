@@ -12,7 +12,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 nav {
-  /* background-color: #f06b2e; */
+  background-color: #fc4e2b;
   display: flex;
   justify-content: space-between;
   box-shadow: 1px 1px 12px 2px rgba(194, 194, 194, 1);
@@ -28,15 +28,15 @@ nav {
   padding-left: 20px;
   color: #000;
 }
-
 .username {
-  color: #000000;
+  color: #fff;
   font-size: 14px;
   padding: 5px;
 }
 
 .username:hover {
   cursor: pointer;
+  color: #ffffff;
 }
 
 .user-icon {
@@ -52,6 +52,7 @@ nav {
 }
 
 .nav-link {
+
 }
 
 .dropdown-content {
@@ -64,16 +65,23 @@ nav {
 }
 
 .dropdown-content a {
-  color: #fff;
-  background-color: #f06b2e;
+  color: #000000;
   padding: 8px 15px;
   text-decoration: none;
   display: block;
+  background-color: #ffffff;
 }
 
+
+.text-cont {
+  font-size: 20px;
+  font-weight: 400;
+  width: 70%;
+  margin: 0 auto;
+}
 .dropdown-content a:hover {
-  background-color: #ffffff;
-  color: #f06b2e;
+  background-color: #fc4e2b;
+  color: #ffffff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -81,13 +89,14 @@ nav {
 }
 
 .dropdown:hover .username {
-  color: #000000;
+  color: #ffffff;
 }
+
+
 .logo {
-  width: 120px;
-  height: 120px;
+  height: 170px;
+  padding: 20px;
   object-fit: contain;
-  margin: 10px 80px;
 }
 
 .save-profile {
@@ -180,4 +189,38 @@ select {
   text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+.footer-p {
+  text-align: right;
+    color: #7a7878;
+    margin-right: 20px;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  background-color: #ffffff;
+}
+
+
+a {
+  color: #fc4e2b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-size: 14px;
 }

@@ -1,7 +1,30 @@
 from app import app, db
-from app.models import User, Transaction
+from app.models import User, Transaction, Role, Teller, Manager, Branch, Region, Admin
+from flask import session
+from datetime import timedelta
 
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'User': User, 'Transaction': Transaction}
+    return {
+        'db': db,
+        'User': User,
+        'Transaction': Transaction,
+        'Role': Role,
+        'Admin': Admin,
+        'Region': Region,
+        'Branch': Branch,
+        'Manager': Manager,
+        'Teller': Teller
+    }
+
+
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=30)
+    session.modified = True
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
