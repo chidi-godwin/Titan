@@ -14,7 +14,7 @@ body {
 }
 
 nav {
-    /* background-color: #f06b2e; */
+    background-color: #f06b2e;
     display: flex;
     justify-content: space-between;
     box-shadow: 1px 1px 12px 2px rgba(194, 194, 194, 1);
