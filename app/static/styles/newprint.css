@@ -391,6 +391,14 @@ a {
     display: block;
   }
 
+  .name-fills p {
+    color: #a81219;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+  }
+
   .credentials {
     width: 75%;
   }
@@ -423,12 +431,13 @@ a {
   }
 
   .cred-fill {
-    padding-top: 150px;
+    padding-top: 145px;
+    height: 240px;
   }
 
   .credentials-content {
     width: 75%;
-    margin-left: 40px;
+    margin-left: 70px;
   }
 
   .bounding-box-excerpt {
@@ -454,7 +463,7 @@ a {
   }
 
   .second {
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
 
