@@ -308,69 +308,32 @@ h2 {
   width: 70%;
 }
 
-.dropbtn {
-  padding: 8px;
-  background-color: #e9e5e5;
-  font-size: 14px;
-  border: none;
+.accordion {
+  background-color: #cecaca;
+  color: #444;
   cursor: pointer;
-  border-radius: 5px;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #d6d4d3;
-  color: #fff;
-}
-
-.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd}
-
-.show {display:block;}
-
-.drop-btn {
-  width: 70%;
   display: flex;
-  padding: 10px 40px;
-  background-color: rgb(201, 199, 199);
   justify-content: space-between;
-  cursor: pointer;
-  align-items: center;
+  padding: 18px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
 }
 
-.drop-btn:hover {
-  background-color: rgb(185, 183, 183);
-}
-
-.tellers {
-  background-color: #eee;
-  width: 70%;
-  cursor: pointer;
-}
-
-.tellers p {
-  padding: 5px 40px;
-}
-
-.tellers p:hover {
+.active, .accordion:hover {
   background-color: rgb(228, 226, 226);
 }
+
+.panel {
+  padding: 0 18px;
+  background-color:#e9e7e7;
+  display: none;
+  overflow: hidden;
+}
+
 
 select {
   width: 100%;
