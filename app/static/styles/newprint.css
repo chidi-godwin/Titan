@@ -391,6 +391,14 @@ a {
     display: block;
   }
 
+  .name-fills p {
+    color: #a81219;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+  }
+
   .credentials {
     width: 75%;
   }
