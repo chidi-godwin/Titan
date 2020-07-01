@@ -98,7 +98,7 @@ body {
 .bouding-box-content {
   color: #a81219;
   padding-top: 30px;
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 20px;
   font-weight: 600;
   width: 80%;
@@ -298,7 +298,7 @@ body {
 
 .name-fills p {
   color: #a81219;
-  line-height: 14px;
+  line-height: 18px;
   font-size: 18px;
   font-weight: 600;
   text-align: left;
@@ -394,7 +394,7 @@ a {
   .name-fills p {
     color: #a81219;
     line-height: 18px;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 600;
     text-align: left;
   }
@@ -464,13 +464,13 @@ a {
   }
 
   .second {
-    padding-top: 60px;
+    padding-top: 75px;
     line-height: 13px !important;
   }
 
 
   .print-d {
-    padding-top: 80px;  
+    padding-top: 70px;  
   }
 
   .account-no-box-details {
@@ -534,7 +534,7 @@ a {
 
   .authorized > .amount-text-detail > .amount-text-fill {
     opacity: 100 !important;
-    margin-top: -25px;
+    margin-top: -40px;
   }
 
   .authorized .amount-text-detail {
