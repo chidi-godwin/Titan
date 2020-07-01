@@ -82,16 +82,18 @@ def printer(ref_id):
     if transaction:
         words = inflect.engine()
         naira, kobo = list( 
-            map(int, str(transaction.total_debit).split('.')))
-        naira_in_words = words.number_to_words(naira)
-        kobo_in_words = words.number_to_words(kobo)
-        amount_in_words = (' and ').join(
-            [naira_in_words, kobo_in_words+' kobo'])
+            map(int, str(transaction.amount).split('.')))
+        naira_in_words = words.number_to_words(naira) + ' naira'
+        kobo_in_words = words.number_to_words(kobo) + ' kobo' if kobo != 0 else None
+        amount_in_words = naira_in_words if not kobo_in_words else (' and ').join(
+            [naira_in_words, kobo_in_words])
         numbers = {
             'amount': f"{transaction.amount:,.2f}",
             'vat': f"{transaction.vat:,.2f}",
             'commission': f"{transaction.commission:,.2f}",
-            'total_debit': f"{transaction.total_debit:,.2f}"
+            'total_debit': f"{transaction.total_debit:,.2f}",
+            'day': f"{transaction.date.day:02d}",
+            'month': f"{transaction.date.month:02d}"
         }
         return render_template('print.html', transaction=transaction, amount_in_words=amount_in_words, **numbers)
     return render_template('print.html')
