@@ -534,7 +534,10 @@ a {
 
   .authorized > .amount-text-detail > .amount-text-fill {
     opacity: 100 !important;
-    margin-top: -55px;
+  }
+
+  .authorized {
+    margin-top: -10px;
   }
 
   .authorized .amount-text-detail {
