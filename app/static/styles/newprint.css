@@ -394,9 +394,7 @@ a {
     text-align: left;
   }
 
-  .details-cont {
-    height: 200px;
-  }
+  
 
   .credentials {
     width: 75%;
@@ -424,7 +422,7 @@ a {
 
   .amount-box {
     margin-top: 80px;
-    padding-left: 150px;
+    padding-left: 200px;
   }
   .bouding-box-title {
     opacity: 0;
@@ -459,11 +457,12 @@ a {
   }
 
   .first {
-    padding-top: 25px;
+    /* padding-top: 25px; */
   }
 
   .second {
-    padding-top: 75px;
+    padding-top: 60px;
+
     line-height: 13px !important;
   }
 
