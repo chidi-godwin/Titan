@@ -468,16 +468,20 @@ a {
     opacity: 0;
   }
 
-  .account-name-box-details, .account-no-box-details {
-    padding-left: 20px;
+  .account-name-box-details{
+    padding-left: 5px;
+  }
+
+  .account-no-box-details  {
+    padding-left: 3px;
   }
 
   .first {
-    margin-top: -5px;
+    margin-top: -3px;
   }
 
   .second {
-    padding-top: 83px;
+    padding-top: 82px;
 
     line-height: 13px !important;
   }
