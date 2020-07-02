@@ -139,7 +139,7 @@ body {
 
 .amount-text-detail-fill {
   color: #a81219;
-  /* margin-left: 40px; */
+  margin-left: 40px;
 }
 
 .account-no-box-text {
@@ -369,9 +369,26 @@ a {
   font-size: 14px;
 }
 
+
+/**
+  * Media PRint Stylesssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+*/
+
 @media print {
   .logo {
     display: none;
+  }
+
+  .details-cont {
+    height: 350px;
+  }
+
+  .bounding-box {
+    height: 100px;
+  }
+
+  .copy-excerpt {
+    margin-bottom: 0px;
   }
 
   a {
