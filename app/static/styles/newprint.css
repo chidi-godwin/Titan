@@ -139,7 +139,7 @@ body {
 
 .amount-text-detail-fill {
   color: #a81219;
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 
 .account-no-box-text {
@@ -421,15 +421,14 @@ a {
   }
 
   .amount-box {
-    margin-top: 80px;
-    padding-left: 200px;
+    padding-left: 300px;
   }
   .bouding-box-title {
     opacity: 0;
   }
 
   .cred-fill {
-    padding-top: 250px;
+    padding-top: 150px;
     height: 150px;
   }
 
@@ -461,7 +460,7 @@ a {
   }
 
   .second {
-    padding-top: 60px;
+    padding-top: 45px;
 
     line-height: 13px !important;
   }
