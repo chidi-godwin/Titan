@@ -5,11 +5,6 @@ body {
   /* padding: 10px; */
 }
 
-.printer-box {
-  height: 0px;
-  width: 100%;
-  display: none;
-}
 
 .prt-nav {
   width: 90%;
@@ -374,9 +369,26 @@ a {
   font-size: 14px;
 }
 
+
+/**
+  * Media PRint Stylesssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+*/
+
 @media print {
   .logo {
     display: none;
+  }
+
+  .details-cont {
+    height: 400px;
+  }
+
+  .bounding-box {
+    height: 120px;
+  }
+
+  .copy-excerpt {
+    margin-bottom: 0px;
   }
 
   a {
@@ -398,6 +410,8 @@ a {
     font-weight: 600;
     text-align: left;
   }
+
+  
 
   .credentials {
     width: 75%;
@@ -424,15 +438,14 @@ a {
   }
 
   .amount-box {
-    margin-top: 80px;
-    padding-left: 150px;
+    padding-left: 300px;
   }
   .bouding-box-title {
     opacity: 0;
   }
 
   .cred-fill {
-    padding-top: 150px;
+    padding-top: 220px;
     height: 150px;
   }
 
@@ -455,22 +468,27 @@ a {
     opacity: 0;
   }
 
-  .account-name-box-details, .account-no-box-details {
-    padding-left: 20px;
+  .account-name-box-details{
+    padding-left: 5px;
+  }
+
+  .account-no-box-details  {
+    padding-left: 3px;
   }
 
   .first {
-    padding-top: 25px;
+    margin-top: -3px;
   }
 
   .second {
-    padding-top: 75px;
+    padding-top: 82px;
+
     line-height: 13px !important;
   }
 
 
   .print-d {
-    padding-top: 70px;  
+    padding-top: 125px;  
   }
 
   .account-no-box-details {
